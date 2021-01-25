@@ -1,0 +1,15 @@
+<svg id="arrow" data-name="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.07 195.07">
+<defs><style>
+.arrow-svg{
+    fill:none;
+    stroke:white;
+    stroke-miterlimit:10;
+    stroke-width:15px;
+}
+</style>
+</defs>
+<title>downarrow</title>
+<line class="arrow-svg" x1="53.54" y1="210" x2="53.54"/>
+<path class="arrow-svg" d="M9.47,139" transform="translate(1.06)"/>
+<polyline class="arrow-svg" points="3.54 138 53.54 188 103.54 138"/>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "name": "realpeople",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriyBartosh/realpeople.git"
+  },
+  "author": "Dmitriy Bartosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriyBartosh/realpeople/issues"
+  },
+  "homepage": "https://github.com/DmitriyBartosh/realpeople#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
+    "gsap": "^3.6.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}
