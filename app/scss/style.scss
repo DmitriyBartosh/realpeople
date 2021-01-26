@@ -1,4 +1,42 @@
+@mixin textMain {
+    font: {
+      family: 'Montserrat', sans-serif;
+      size: 12px;
+      weight: 600;
+    }
+    color: #333;
+}
+
+$colorButton: rgb(255, 113, 113);
+$colorButtonLarge: rgb(113, 255, 208);
+
 body{
-    margin: 0;
-    padding: 0;
+    @include textMain;
+}
+main{
+    padding: 10px;
+}
+
+.categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    width: 100%;
+    &__button{
+        display: flex;
+        align-items: flex-end;
+        grid-row: span 15;
+        background-color: $colorButton;
+        padding: 10px;
+        border-radius: 15px;
+        @include textMain;
+        p{
+            margin: 0;
+            padding: 10px;
+        }
+    }
+    .large{
+        background-color: $colorButtonLarge;
+        grid-row: span 25;
+    }
 }
