@@ -8,7 +8,8 @@
 }
 
 $colorButton: rgb(255, 113, 113);
-$colorButtonLarge: rgb(113, 255, 208);
+$colorButtonLong: rgb(113, 255, 208);
+$colorButtonWide: rgb(217, 255, 113);
 
 body{
     @include textMain;
@@ -22,6 +23,7 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     width: 100%;
+    margin-bottom: 60px;
     &__button{
         display: flex;
         align-items: flex-end;
@@ -35,8 +37,12 @@ main{
             padding: 10px;
         }
     }
-    .large{
-        background-color: $colorButtonLarge;
-        grid-row: span 25;
+    .long{
+        background-color: $colorButtonLong;
+        grid-row: span 30;
+    }
+    .wide{
+        background-color: $colorButtonWide;
+        grid-column: 1/3;
     }
 }

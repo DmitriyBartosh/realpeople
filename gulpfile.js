@@ -8,13 +8,15 @@ const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
+const pug = require('gulp-pug');
 
 // Синхронизация с браузером
 function browsersync (){
     browserSync.init({
         server: {
             baseDir: "app/"
-        }
+        },
+        browser: 'chrome',
     });
 }
 
@@ -42,11 +44,20 @@ function images() {
     .pipe(dest('dist/img'))
 }
 
+// Сборка html страниц
+function htmlPages() {
+    return src('app/pug/pages/*.pug')
+    .pipe(pug({
+        pretty: true
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream())
+}
+
 // Оптимизация скриптов
+const jsFiles = ['app/js/main.js'];
 function scripts(){
-    return src([
-        'app/js/main.js'
-    ])
+    return src(jsFiles)
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
@@ -57,6 +68,7 @@ function scripts(){
 function styles(){
     return src([
         'app/scss/normalize.scss',
+        'app/scss/nav.scss',
         'app/scss/style.scss'
     ])
     .pipe(scss({outputStyle: 'compressed'}))
@@ -82,9 +94,10 @@ function build() {
 
 // Слежение за изменением файлов проекта
 function watching() {
+    watch(['app/pug/**/*.pug'], htmlPages);
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-    watch(['app/*.html']).on('change', browserSync.reload);
+    watch(['app/*.html'], browsersync.reload);
 }
 
 exports.styles = styles;
@@ -93,8 +106,9 @@ exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.htmlPages = htmlPages;
 
 // Сборка проекта (команда build)
 exports.build = series(cleanDist, images, build);
 // Запуск обновление стилей, скриптов, синхронизация браузара и слежение за изменениями(команда gulp)
-exports.default = parallel(styles, scripts, browsersync, watching); 
+exports.default = parallel(htmlPages, styles, scripts, browsersync, watching); 
