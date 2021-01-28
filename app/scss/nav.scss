@@ -1,5 +1,10 @@
+@import '../../node_modules/swiper/swiper-bundle.css';
+
 $colorNav: rgb(180, 115, 255);
 $colorSwitch: rgb(180, 115, 255);
+
+$colorBack: rgb(197, 0, 0);
+$colorLink: rgb(255, 239, 22);
 
 .mainNav{
 position: fixed;
@@ -22,5 +27,46 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
   }
   .switch{
     color: $colorSwitch;
+  }
+}
+
+.categoryNav{
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: white;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  &__back{
+
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $colorBack;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+  &__list{
+    position: relative;
+    display: flex;
+
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $colorLink;
+      height: 40px;
+      width: 60px;
+      border-radius: 15px;
+      margin: auto 10px;
+    }
   }
 }
