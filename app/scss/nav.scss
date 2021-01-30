@@ -6,6 +6,8 @@ $colorSwitch: rgb(180, 115, 255);
 $colorBack: rgb(197, 0, 0);
 $colorLink: rgb(255, 239, 22);
 
+$colorServiceHeader: rgb(179, 0, 140);
+
 .mainNav{
 position: fixed;
 bottom: 0;
@@ -34,7 +36,7 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
   position: fixed;
   bottom: 0;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 6fr;
   grid-gap: 10px;
   width: calc(100% - 20px);
   padding: 10px;
@@ -53,10 +55,15 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
       border-radius: 50%;
     }
   }
+  &__container{
+    width: calc(100% - -10px);
+    overflow: hidden;
+    position: relative;
+  }
   &__list{
     position: relative;
     display: flex;
-
+    width: max-content;
     a{
       position: relative;
       display: flex;
@@ -68,5 +75,24 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
       border-radius: 15px;
       margin: auto 10px;
     }
+  }
+}
+
+.serviceHeader{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin: 10px;
+    background-color: $colorServiceHeader;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
   }
 }

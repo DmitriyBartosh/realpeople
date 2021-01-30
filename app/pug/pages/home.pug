@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Авто | Реальные Люди
+        meta(name="google" content="notranslate")
         link(rel="stylesheet", href="css/style.min.css")
     body
       main
@@ -11,7 +11,7 @@ html(lang="en")
           h2 Дом
           p Выберите магазин или услугу
         .categories
-          .categories__button.wide
+          a(href="service.html").categories__button.wide
             p Услуга
           .categories__button
             p Магазин
@@ -29,4 +29,5 @@ html(lang="en")
             p Услуга
       include ../layout/categoryNav.pug
       
+      script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
       script(src="js/main.min.js")

@@ -14,6 +14,8 @@ $colorButtonWide: rgb(217, 255, 113);
 $colorCategoryHeader: rgb(0, 0, 0);
 $colorCategoryDesc: rgb(82, 82, 82);
 
+$colorServiceCallback: rgb(126, 236, 0);
+
 body{
     @include textMain;
 }
@@ -61,5 +63,37 @@ main{
   p{
     color:$colorCategoryDesc;
     font-weight: 300;
+  }
+}
+
+.mainOption{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 130px);
+  h1{
+    color: $colorCategoryHeader;
+    font-size: 2rem;
+  }
+  p{
+    color: $colorCategoryDesc;
+    font-weight: 300;
+  }
+  a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $colorServiceCallback;
+    color: white;
+    text-transform: lowercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    height: 40px;
+    padding: 0px 40px;
+    margin-top: 50px;
+    border-radius: 15px;
   }
 }
