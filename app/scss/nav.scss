@@ -1,7 +1,5 @@
-@import '../../node_modules/swiper/swiper-bundle.css';
-
-$colorNav: rgb(180, 115, 255);
-$colorSwitch: rgb(180, 115, 255);
+$colorNav:#ff7171;
+$colorSwitch: #ff7171;
 
 $colorBack: rgb(197, 0, 0);
 $colorLink: rgb(255, 239, 22);
@@ -17,7 +15,7 @@ grid-gap: 10px;
 background-color: white;
 width: calc(100% - 20px);
 padding: 10px;
-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+z-index: 100;
   a{
   position: relative;
   display: flex;
@@ -26,58 +24,84 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
   height: 40px;
   border-radius: 15px;
   background-color: $colorNav;
+  img{
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
   }
   .switch{
-    color: $colorSwitch;
+    background-color: $colorSwitch;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    img{
+      margin-right: 10px;
+    }
   }
 }
 
 .categoryNav{
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: grid;
-  grid-template-columns: 1fr 6fr;
-  grid-gap: 10px;
-  width: calc(100% - 20px);
+  grid-template-columns: 60px 6fr;
   padding: 10px;
   background-color: white;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  z-index: 100;
   &__back{
-
+    position: relative;
+    height: 40px;
+    grid-column: 1/2;
     a{
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: $colorBack;
-      height: 40px;
       width: 40px;
+      height: 40px;
       border-radius: 50%;
+      background-color: $colorBack;
     }
   }
-  &__container{
-    width: calc(100% - -10px);
-    overflow: hidden;
+  &__link{
     position: relative;
+    display: inline-block;
+    grid-column: 2/6;
   }
-  &__list{
+  &__container{
     position: relative;
-    display: flex;
-    width: max-content;
-    a{
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    .swiper-wrapper{
       position: relative;
+      width: max-content;
+      height: 100%;
+      z-index: 1;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $colorLink;
-      height: 40px;
-      width: 60px;
-      border-radius: 15px;
-      margin: auto 10px;
+      transition-property: transform;
+      box-sizing: content-box;
+      a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 40px;
+        border-radius: 15px;
+        background-color: $colorLink;
+      }
     }
   }
 }
 
+// Стили для заголовка в Услугах и Магазинах
 .serviceHeader{
   position: relative;
   display: grid;

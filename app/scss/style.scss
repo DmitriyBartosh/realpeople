@@ -4,7 +4,7 @@
       size: 12px;
       weight: 600;
     }
-    color: #333;
+    color: white;
 }
 
 $colorButton: rgb(255, 113, 113);
@@ -12,7 +12,7 @@ $colorButtonLong: rgb(113, 255, 208);
 $colorButtonWide: rgb(217, 255, 113);
 
 $colorCategoryHeader: rgb(0, 0, 0);
-$colorCategoryDesc: rgb(82, 82, 82);
+$colorCategoryDesc: rgb(73, 73, 73);
 
 $colorServiceCallback: rgb(126, 236, 0);
 
@@ -30,18 +30,82 @@ main{
     width: 100%;
     margin-bottom: 60px;
     &__button{
+        position: relative;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         grid-row: span 15;
         background-color: $colorButton;
         text-decoration: none;
+        overflow: hidden;
         padding: 10px;
         border-radius: 15px;
         @include textMain;
         p{
             margin: 0;
             padding: 10px;
+            z-index: 50;
         }
+    }
+    &__beauty{
+      background: rgb(0,135,168);
+      background: linear-gradient(180deg, rgba(0,135,168,1) 32%, rgba(129,192,211,1) 82%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
+      img{
+        position: absolute;
+        bottom: -25%;
+        left: -5%;
+        height: 100%;
+        width: 110%;
+      }
+    }
+    &__auto{
+      background: rgb(187,234,206);
+      background: linear-gradient(180deg, rgba(187,234,206,1) 0%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
+      img{
+        position: absolute;
+        bottom: 5%;
+        right: -60%;
+        width: 150%;
+      }
+    }
+    &__home{
+      background: rgb(135,135,135);
+      background: linear-gradient(90deg, rgba(135,135,135,1) 10%, rgba(156,139,112,1) 50%, rgba(201,203,187,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
+      img{
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        height: 100%;
+      }
+    }
+    &__eat{
+      background: rgb(240,190,21);
+      background: linear-gradient(180deg, rgba(240,190,21,1) 0%, rgba(229,232,186,1) 55%, rgba(228,236,202,1) 68%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
+      img{
+        position: absolute;
+        top: 15%;
+        right: -20%;
+        height: 90%;
+      }
+    }
+    &__cloth{
+      background: rgb(244,203,191);
+      background: linear-gradient(90deg, rgba(244,203,191,1) 0%, rgba(230,184,166,1) 48%, rgba(214,149,122,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
+      img{
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        height: 100%;
+      }
+    }
+    &__motion{
+      background: rgb(237,238,244);
+      background: linear-gradient(90deg, rgba(237,238,244,1) 0%, rgba(207,210,224,1) 48%, rgba(170,176,197,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
+      img{
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 80%;
+      }
     }
     .long{
         background-color: $colorButtonLong;

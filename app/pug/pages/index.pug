@@ -9,22 +9,28 @@ html(lang="ru")
     body
       main
         .categories
-          a(href="home.html").categories__button.long
-            p Дом
-          .categories__button
-            p Еда
-          .categories__button
-            p Одежда
-          .categories__button.wide
-            p Авто
-          .categories__button
-            p Движение
-          .categories__button.long
+          a(href="beauty.html").categories__button.categories__beauty
             p Красота
-          .categories__button.long
+            img(src="img/main/beauty.svg", alt="")
+          a(href="eat.html").categories__button.categories__eat.long
+            p Еда
+            img(src="img/main/eat.svg", alt="")
+          a(href="auto.html").categories__button.categories__auto
+            p Авто
+            img(src="img/main/auto.svg", alt="")
+          a(href="home.html").categories__button.categories__home.wide
+            p Дом
+            img(src="img/main/house.svg", alt="")
+          a(href="cloth.html").categories__button.categories__cloth
+            p Одежда
+            img(src="img/main/clothes.svg", alt="")
+          a(href="motion.html").categories__button.categories__motion
+            p Движение
+            img(src="img/main/motion.svg", alt="")
+          a(href="sport.html").categories__button.categories__sport
             p Спорт
           .categories__button
             p Категория
       include ../layout/mainNav.pug
       
-      script(src="js/main.min.js")
+      script(src="js/bundle.js")

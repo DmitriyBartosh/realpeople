@@ -3,12 +3,16 @@ const { src, dest, watch, parallel, series } = require('gulp');
 
 const scss = require('gulp-sass');
 const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const pug = require('gulp-pug');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const { notify } = require('browser-sync');
 
 // Синхронизация с браузером
 function browsersync (){
@@ -55,11 +59,34 @@ function htmlPages() {
 }
 
 // Оптимизация скриптов
-const jsFiles = ['app/js/main.js'];
+const jsFiles = ['app/js/script.js'];
 function scripts(){
     return src(jsFiles)
-    .pipe(concat('main.min.js'))
+    .pipe(webpackStream({
+      output: {
+        filename: 'script.js'
+      },
+      module: {
+        rules: [
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  ['@babel/preset-env', { targets: "defaults" }]
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(concat('bundle.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
     .pipe(dest('app/js'))
     .pipe(browserSync.stream())
 }
@@ -96,7 +123,7 @@ function build() {
 function watching() {
     watch(['app/pug/**/*.pug'], htmlPages);
     watch(['app/scss/**/*.scss'], styles);
-    watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+    watch(['app/js/**/*.js', '!app/js/bundle.js'], scripts);
     watch(['app/*.html'], browsersync.reload);
 }
 
