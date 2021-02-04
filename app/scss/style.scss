@@ -1,12 +1,3 @@
-@mixin textMain {
-    font: {
-      family: 'Montserrat', sans-serif;
-      size: 12px;
-      weight: 600;
-    }
-    color: white;
-}
-
 $colorButton: rgb(255, 113, 113);
 $colorButtonLong: rgb(113, 255, 208);
 $colorButtonWide: rgb(217, 255, 113);
@@ -15,6 +6,99 @@ $colorCategoryHeader: rgb(0, 0, 0);
 $colorCategoryDesc: rgb(73, 73, 73);
 
 $colorServiceCallback: rgb(126, 236, 0);
+
+@mixin textMain {
+    font: {
+      family: 'Montserrat', sans-serif;
+      size: 12px;
+      weight: 600;
+    }
+    color: white;
+}
+@mixin beauty {
+  background: rgb(153,51,177);
+  background: linear-gradient(180deg, rgba(153,51,177,1) 16%, rgba(217,179,226,1) 100%);
+  img{
+    position: absolute;
+    bottom: -20%;
+    height: 150px;
+  }
+}
+
+@mixin eat {
+  background: rgb(227,65,45);
+  background: linear-gradient(180deg, rgba(227,65,45,1) 16%, rgba(241,143,52,1) 52%, rgba(253,200,0,1) 82%, rgba(255,239,38,1) 100%);
+  img{
+    position: absolute;
+    top: 15%;
+    right: -20%;
+    height: 300px;
+  }
+}
+
+@mixin auto {
+  background: rgb(135,170,255);
+  background: linear-gradient(180deg, rgba(135,170,255,1) 15%, rgba(171,212,255,1) 54%, rgba(68,183,254,1) 100%);
+  img{
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    height: 100px;
+  }
+}
+
+@mixin home {
+  background: rgb(164,207,227);
+  background: linear-gradient(265deg, rgba(164,207,227,1) 15%, rgba(33,108,200,1) 100%);
+  img{
+    position: absolute;
+    top: 15%;
+    height: 150px;
+  }
+}
+
+@mixin cloth {
+  background: rgb(250,225,150);
+  background: linear-gradient(90deg, rgba(250,225,150,1) 15%, rgba(244,203,41,1) 52%, rgba(241,197,0,1) 100%);
+  img{
+    position: absolute;
+    top: 25%;
+    height: 120px;
+  }
+}
+
+@mixin motion {
+  background: rgb(130,195,146);
+  background: linear-gradient(90deg, rgba(130,195,146,1) 0%, rgba(3,168,95,1) 51%, rgba(0,150,66,1) 100%);
+  img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+  }
+}
+
+@mixin gift {
+  background: rgb(243,79,35);
+  background: linear-gradient(180deg, rgba(243,79,35,1) 41%, rgba(255,127,80,1) 100%);
+  img{
+    position: absolute;
+    bottom: -5%;
+    left: 25%;
+    height: 250px;
+  }
+}
+
+@mixin training {
+  background: rgb(198,65,145);
+  background: linear-gradient(0deg, rgba(198,65,145,1) 0%, rgba(190,9,8,1) 80%);
+  img{
+    position: absolute;
+    bottom: 10%;
+    right: -55%;
+    height: 220px;
+  }
+}
 
 body{
     @include textMain;
@@ -25,7 +109,8 @@ main{
 
 .categories{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 150px);
     grid-gap: 10px;
     width: 100%;
     margin-bottom: 60px;
@@ -33,7 +118,9 @@ main{
         position: relative;
         display: flex;
         align-items: flex-start;
-        grid-row: span 15;
+        justify-content: center;
+        grid-row: span 1;
+        grid-column: span 1;
         background-color: $colorButton;
         text-decoration: none;
         overflow: hidden;
@@ -41,79 +128,45 @@ main{
         border-radius: 15px;
         @include textMain;
         p{
+            width: 100%;
             margin: 0;
             padding: 10px;
             z-index: 50;
         }
     }
-    &__beauty{
-      background: rgb(0,135,168);
-      background: linear-gradient(180deg, rgba(0,135,168,1) 32%, rgba(129,192,211,1) 82%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
-      img{
-        position: absolute;
-        bottom: -25%;
-        left: -5%;
-        height: 100%;
-        width: 110%;
-      }
-    }
-    &__auto{
-      background: rgb(187,234,206);
-      background: linear-gradient(180deg, rgba(187,234,206,1) 0%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
-      img{
-        position: absolute;
-        bottom: 5%;
-        right: -60%;
-        width: 150%;
-      }
-    }
-    &__home{
-      background: rgb(135,135,135);
-      background: linear-gradient(90deg, rgba(135,135,135,1) 10%, rgba(156,139,112,1) 50%, rgba(201,203,187,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
-      img{
-        position: absolute;
-        top: 15%;
-        right: 5%;
-        height: 100%;
-      }
-    }
-    &__eat{
-      background: rgb(240,190,21);
-      background: linear-gradient(180deg, rgba(240,190,21,1) 0%, rgba(229,232,186,1) 55%, rgba(228,236,202,1) 68%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(255,255,255,1) 100%);
-      img{
-        position: absolute;
-        top: 15%;
-        right: -20%;
-        height: 90%;
-      }
-    }
-    &__cloth{
-      background: rgb(244,203,191);
-      background: linear-gradient(90deg, rgba(244,203,191,1) 0%, rgba(230,184,166,1) 48%, rgba(214,149,122,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
-      img{
-        position: absolute;
-        top: 25%;
-        left: 5%;
-        height: 100%;
-      }
-    }
-    &__motion{
-      background: rgb(237,238,244);
-      background: linear-gradient(90deg, rgba(237,238,244,1) 0%, rgba(207,210,224,1) 48%, rgba(170,176,197,1) 100%, rgba(233,248,239,1) 100%, rgba(255,255,255,1) 100%, rgba(229,232,186,1) 100%, rgba(226,244,231,1) 100%, rgba(227,240,217,1) 100%, rgba(184,220,231,1) 100%, rgba(239,247,250,1) 100%, rgba(218,218,218,1) 100%);
-      img{
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        width: 80%;
-      }
-    }
     .long{
-        background-color: $colorButtonLong;
-        grid-row: span 30;
+      background-color: $colorButtonLong;
+      grid-row: span 2;
+      grid-column: span 1;
     }
     .wide{
-        background-color: $colorButtonWide;
-        grid-column: 1/3;
+      background-color: $colorButtonWide;
+      grid-row: span 1;
+      grid-column: span 2;
+    }
+    &__beauty{
+      @include beauty();
+    }
+    &__auto{
+      @include auto();
+    }
+    &__home{
+      @include home();
+    }
+    &__eat{
+      @include eat();
+    }
+    &__cloth{
+      @include cloth();
+    }
+    &__motion{
+      @include motion();
+    }
+    &__training{
+      @include training();
+    }
+    &__gift{
+      @include gift();
     }
 }
 
