@@ -5,7 +5,7 @@ $colorServiceCallback: rgb(126, 236, 0);
 
 @mixin textureBlock {
   opacity: 0.15;
-  background-image: url('./img/texture/blackorchid.png');
+  background-image: url('../img/texture/blackorchid.png');
 }
 
 @mixin textHeaderBlock {
@@ -106,7 +106,7 @@ a{
 }
 main{
     padding: 10px;
-    background-image: url('./img/texture/blackorchid.png');
+    background-image: url('../img/texture/blackorchid.png');
 }
 
 .categories{
