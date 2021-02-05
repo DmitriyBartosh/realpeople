@@ -1,5 +1,5 @@
-$colorBackgroundNav:white;
-$colorText: #ed4233;
+$colorBackgroundNav:url('/img/texture/blackorchid.png');
+$colorText: white;
 
 @mixin textMainNav {
   font-family: 'Nunito-SemiBold', sans-serif;
@@ -18,7 +18,7 @@ $colorText: #ed4233;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-gap: 10px;
-  background-color: $colorBackgroundNav;
+  background-color: rgba($color: #000000, $alpha: 0.8);
   width: calc(100% - 20px);
   padding: 10px;
   z-index: 100;

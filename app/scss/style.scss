@@ -4,8 +4,8 @@ $colorCategoryDesc: rgb(73, 73, 73);
 $colorServiceCallback: rgb(126, 236, 0);
 
 @mixin textureBlock {
-  opacity: 0.25;
-  background-image: url('/img/texture/texture_blocks.png');
+  opacity: 0.2;
+  background-image: url('/img/texture/blackorchid.png');
 }
 
 @mixin textHeaderBlock {
@@ -14,7 +14,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin beauty {
-  background: linear-gradient(240deg, rgba(153,50,204,1) 0%, rgba(138,43,226,1) 100%);
+  background: rgb(242,66,132);
+  background: linear-gradient(120deg, rgba(242,66,132,1) 0%, rgba(242,66,84,1) 100%);
   img{
     position: absolute;
     bottom: -25%;
@@ -34,8 +35,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin auto {
-  background: rgb(178,34,34);
-  background: linear-gradient(120deg, rgba(178,34,34,1) 0%, rgba(220,20,60,1) 100%);
+  background: rgb(255,215,0);
+  background: linear-gradient(120deg, rgba(255,215,0,1) 0%, rgba(255,255,0,1) 100%);
   img{
     position: absolute;
     bottom: 5%;
@@ -45,8 +46,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin home {
-  background: rgb(72,209,204);
-  background: linear-gradient(120deg, rgba(72,209,204,1) 0%, rgba(64,224,208,1) 100%);
+  background: rgb(50,205,50);
+  background: linear-gradient(120deg, rgba(50,205,50,1) 0%, rgba(144,238,144,1) 100%);
   img{
     position: absolute;
     top: 15%;
@@ -65,8 +66,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin motion {
-  background: rgb(65,105,225);
-  background: linear-gradient(180deg, rgba(65,105,225,1) 0%, rgba(100,149,237,1) 100%);
+  background: rgb(72,209,204);
+  background: linear-gradient(120deg, rgba(72,209,204,1) 0%, rgba(64,224,208,1) 100%);
   img{
     position: absolute;
     bottom: 0;
@@ -76,8 +77,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin gift {
-  background: rgb(243,79,35);
-  background: linear-gradient(180deg, rgba(243,79,35,1) 41%, rgba(255,127,80,1) 100%);
+  background: rgb(255,0,0);
+  background: linear-gradient(120deg, rgba(255,0,0,1) 0%, rgba(220,20,60,1) 100%);
   img{
     position: absolute;
     bottom: -5%;
@@ -87,8 +88,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin training {
-  background: rgb(50,205,50);
-  background: linear-gradient(120deg, rgba(50,205,50,1) 0%, rgba(144,238,144,1) 100%);
+  background: rgb(65,105,225);
+  background: linear-gradient(180deg, rgba(65,105,225,1) 0%, rgba(100,149,237,1) 100%);
   img{
     position: absolute;
     bottom: 10%;
@@ -105,6 +106,7 @@ a{
 }
 main{
     padding: 10px;
+    background-image: url('/img/texture/blackorchid.png');
 }
 
 .categories{
