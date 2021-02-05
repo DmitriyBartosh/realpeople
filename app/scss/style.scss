@@ -1,33 +1,30 @@
-$colorButton: rgb(255, 113, 113);
-$colorButtonLong: rgb(113, 255, 208);
-$colorButtonWide: rgb(217, 255, 113);
-
 $colorCategoryHeader: rgb(0, 0, 0);
 $colorCategoryDesc: rgb(73, 73, 73);
 
 $colorServiceCallback: rgb(126, 236, 0);
 
-@mixin textMain {
-    font: {
-      family: 'Montserrat', sans-serif;
-      size: 12px;
-      weight: 600;
-    }
-    color: white;
+@mixin textureBlock {
+  opacity: 0.25;
+  background-image: url('/img/texture/texture_blocks.png');
 }
+
+@mixin textHeaderBlock {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1.25rem;
+}
+
 @mixin beauty {
-  background: rgb(153,51,177);
-  background: linear-gradient(180deg, rgba(153,51,177,1) 16%, rgba(217,179,226,1) 100%);
+  background: linear-gradient(240deg, rgba(153,50,204,1) 0%, rgba(138,43,226,1) 100%);
   img{
     position: absolute;
-    bottom: -20%;
+    bottom: -25%;
     height: 150px;
   }
 }
 
 @mixin eat {
-  background: rgb(227,65,45);
-  background: linear-gradient(180deg, rgba(227,65,45,1) 16%, rgba(241,143,52,1) 52%, rgba(253,200,0,1) 82%, rgba(255,239,38,1) 100%);
+  background: rgb(255,140,0);
+  background: linear-gradient(240deg, rgba(255,140,0,1) 0%, rgba(255,165,0,1) 100%);
   img{
     position: absolute;
     top: 15%;
@@ -37,8 +34,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin auto {
-  background: rgb(135,170,255);
-  background: linear-gradient(180deg, rgba(135,170,255,1) 15%, rgba(171,212,255,1) 54%, rgba(68,183,254,1) 100%);
+  background: rgb(178,34,34);
+  background: linear-gradient(120deg, rgba(178,34,34,1) 0%, rgba(220,20,60,1) 100%);
   img{
     position: absolute;
     bottom: 5%;
@@ -48,8 +45,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin home {
-  background: rgb(164,207,227);
-  background: linear-gradient(265deg, rgba(164,207,227,1) 15%, rgba(33,108,200,1) 100%);
+  background: rgb(72,209,204);
+  background: linear-gradient(120deg, rgba(72,209,204,1) 0%, rgba(64,224,208,1) 100%);
   img{
     position: absolute;
     top: 15%;
@@ -58,8 +55,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin cloth {
-  background: rgb(250,225,150);
-  background: linear-gradient(90deg, rgba(250,225,150,1) 15%, rgba(244,203,41,1) 52%, rgba(241,197,0,1) 100%);
+  background: rgb(219,112,147);
+  background: linear-gradient(170deg, rgba(219,112,147,1) 0%, rgba(255,182,193,1) 100%);
   img{
     position: absolute;
     top: 25%;
@@ -68,8 +65,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin motion {
-  background: rgb(130,195,146);
-  background: linear-gradient(90deg, rgba(130,195,146,1) 0%, rgba(3,168,95,1) 51%, rgba(0,150,66,1) 100%);
+  background: rgb(65,105,225);
+  background: linear-gradient(180deg, rgba(65,105,225,1) 0%, rgba(100,149,237,1) 100%);
   img{
     position: absolute;
     bottom: 0;
@@ -90,8 +87,8 @@ $colorServiceCallback: rgb(126, 236, 0);
 }
 
 @mixin training {
-  background: rgb(198,65,145);
-  background: linear-gradient(0deg, rgba(198,65,145,1) 0%, rgba(190,9,8,1) 80%);
+  background: rgb(50,205,50);
+  background: linear-gradient(120deg, rgba(50,205,50,1) 0%, rgba(144,238,144,1) 100%);
   img{
     position: absolute;
     bottom: 10%;
@@ -100,8 +97,11 @@ $colorServiceCallback: rgb(126, 236, 0);
   }
 }
 
-body{
-    @include textMain;
+html{
+  font-size: 12px;
+}
+a{
+  text-decoration: none;
 }
 main{
     padding: 10px;
@@ -121,26 +121,35 @@ main{
         justify-content: center;
         grid-row: span 1;
         grid-column: span 1;
-        background-color: $colorButton;
-        text-decoration: none;
         overflow: hidden;
         padding: 10px;
         border-radius: 15px;
-        @include textMain;
         p{
             width: 100%;
+            color: white;
             margin: 0;
             padding: 10px;
             z-index: 50;
+            @include textHeaderBlock();
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 20;
+          @include textureBlock();
         }
     }
     .long{
-      background-color: $colorButtonLong;
       grid-row: span 2;
       grid-column: span 1;
     }
     .wide{
-      background-color: $colorButtonWide;
       grid-row: span 1;
       grid-column: span 2;
     }
@@ -207,7 +216,6 @@ main{
     text-transform: lowercase;
     font-size: 1rem;
     letter-spacing: 1px;
-    text-decoration: none;
     height: 40px;
     padding: 0px 40px;
     margin-top: 50px;

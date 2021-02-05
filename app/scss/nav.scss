@@ -1,45 +1,7 @@
-$colorNav:#ff7171;
-$colorSwitch: #ff7171;
-
 $colorBack: rgb(197, 0, 0);
 $colorLink: rgb(255, 239, 22);
 
 $colorServiceHeader: rgb(179, 0, 140);
-
-.mainNav{
-position: fixed;
-bottom: 0;
-display: grid;
-grid-template-columns: 1fr 3fr 1fr;
-grid-gap: 10px;
-background-color: white;
-width: calc(100% - 20px);
-padding: 10px;
-z-index: 100;
-  a{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  border-radius: 15px;
-  background-color: $colorNav;
-  img{
-    position: relative;
-    width: 20px;
-    height: 20px;
-  }
-  }
-  .switch{
-    background-color: $colorSwitch;
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-    img{
-      margin-right: 10px;
-    }
-  }
-}
 
 .categoryNav{
   position: fixed;
@@ -116,7 +78,6 @@ z-index: 100;
     margin: 10px;
     background-color: $colorServiceHeader;
     color: white;
-    text-decoration: none;
     border-radius: 15px;
   }
 }

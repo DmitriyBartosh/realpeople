@@ -1,0 +1,68 @@
+$colorBackgroundNav:white;
+$colorText: #ed4233;
+
+@mixin textMainNav {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1.2rem;
+  height: 20px;
+}
+
+@mixin realMainNav {
+  font-family: 'Raleway-Bold', sans-serif;
+  font-size: 1.2rem;
+}
+
+.mainNav{
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 10px;
+  background-color: $colorBackgroundNav;
+  width: calc(100% - 20px);
+  padding: 10px;
+  z-index: 100;
+    a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $colorText;
+    height: 40px;
+    border-radius: 15px;
+    img{
+      position: relative;
+      width: 20px;
+      height: 20px;
+    }
+    }
+    #about{
+      p{
+        @include realMainNav();
+      }
+    }
+    .switch{
+      color: $colorText;
+      font-weight: 300;
+      img{
+        margin-right: 10px;
+      }
+      p{
+        @include textMainNav();
+      }
+      &::after,
+      &::before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background-color: $colorText;
+      }
+      &::after{
+        left: -5px;
+      }
+      &::before{
+        right: -5px;
+      }
+    }
+  }

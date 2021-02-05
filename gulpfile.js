@@ -94,8 +94,10 @@ function scripts(){
 // Оптимизация скриптов
 function styles(){
     return src([
+        'app/scss/font.scss',
         'app/scss/normalize.scss',
         'app/scss/nav.scss',
+        'app/scss/navMain.scss',
         'app/scss/style.scss'
     ])
     .pipe(scss({outputStyle: 'compressed'}))
