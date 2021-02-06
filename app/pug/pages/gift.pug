@@ -4,29 +4,30 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(name="google" content="notranslate")
-        title Спорт | Реальные люди
+        title Подарки | Реальные люди
         link(rel="stylesheet", href="css/style.min.css")
     body
       main
         .categoryHeader
-          h2 Спорт
+          h2 Подарки
           p Выберите магазин или услугу
-        .categories
+          .categoryGift
+        .categories.categoriesService
           a(href="service.html").categories__button.wide
             p Услуга
-          .categories__button
+          .categories__button.small
             p Магазин
           .categories__button.long
             p Магазин
-          .categories__button
+          .categories__button.small
             p Услуга
           .categories__button.long
             p Услуга
-          .categories__button
+          .categories__button.small
             p Магазин
           .categories__button.long
             p Услуга
-          .categories__button
+          .categories__button.small
             p Услуга
       include ../layout/categoryNav.pug
       
