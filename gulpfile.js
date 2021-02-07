@@ -50,7 +50,7 @@ function images() {
 
 // Сборка html страниц
 function htmlPages() {
-    return src('app/pug/pages/*.pug')
+    return src('app/pug/pages/**/*.pug')
     .pipe(pug({
         pretty: true
     }))
@@ -96,9 +96,10 @@ function styles(){
     return src([
         'app/scss/font.scss',
         'app/scss/normalize.scss',
-        'app/scss/nav.scss',
+        'app/scss/navCategory.scss',
         'app/scss/navMain.scss',
-        'app/scss/style.scss'
+        'app/scss/style.scss',
+        'app/scss/styleService.scss'
     ])
     .pipe(scss({outputStyle: 'compressed'}))
     .pipe(concat('style.min.css'))
