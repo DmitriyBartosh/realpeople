@@ -1,0 +1,66 @@
+@mixin makeUp {
+  background-color: #ffb9c3;
+  img{
+    bottom: 0;
+    right: 0;
+    height: 200px;
+  }
+}
+@mixin cosmetic {
+  background-color: #fc92b6;
+  img{
+    bottom: 0;
+    height: 225px;
+  }
+}
+@mixin eyelashes {
+  background-color: #ff6794;
+  img{
+    bottom: 0;
+    right: 0;
+    height: 110px;
+  }
+}
+@mixin manicure {
+  background-color: #ff9dae;
+  img{
+    bottom: 0;
+    right: 0;
+    height: 110px;
+  }
+}
+@mixin massage {
+  background-color: #ffc5d6;
+  img{
+    right: 0;
+    height: 130px;
+  }
+}
+
+.categoriesBeauty{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include manicure();
+  }
+  & a:nth-child(2){
+    @include makeUp();
+  }
+  & a:nth-child(3){
+    @include cosmetic();
+  }
+  & a:nth-child(4){
+    @include eyelashes();
+  }
+  & a:nth-child(5){
+    @include massage();
+  }
+}

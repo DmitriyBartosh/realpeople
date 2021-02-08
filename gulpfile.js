@@ -99,7 +99,8 @@ function styles(){
         'app/scss/navCategory.scss',
         'app/scss/navMain.scss',
         'app/scss/style.scss',
-        'app/scss/styleService.scss'
+        'app/scss/styleService.scss',
+        'app/scss/styleCategory.scss'
     ])
     .pipe(scss({outputStyle: 'compressed'}))
     .pipe(concat('style.min.css'))

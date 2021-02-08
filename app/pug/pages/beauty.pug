@@ -12,23 +12,22 @@ html(lang="ru")
           h2 Красота
           p Выберите магазин или услугу
           .categoryBeauty
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
+        .categories.categoriesBeauty
+          a(href="service.html").categories__button.small
+            p Маникюр
+            img(src="../img/beauty/block/manicure.svg", alt="")
+          a(href="").categories__button.long
+            p Макияж
+            img(src="../img/beauty/block/makeup.svg", alt="")
+          a(href="").categories__button.long
+            p Косметика
+            img(src="../img/beauty/block/cosmetic.svg", alt="")
+          a(href="").categories__button.small
+            p Брови/Ресницы
+            img(src="../img/beauty/block/eyelashes.svg", alt="")
+          a(href="").categories__button.wide
+            p Массаж
+            img(src="../img/beauty/block/massage.svg", alt="")
       include ../layout/categoryNav.pug
       
       script(src="js/bundle.js")

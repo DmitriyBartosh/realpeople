@@ -129,12 +129,6 @@ main{
 }
 
 .categories{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 150px);
-    grid-gap: 10px;
-    width: 100%;
-    margin-bottom: 60px;
     &__button{
         position: relative;
         display: flex;
@@ -200,7 +194,12 @@ main{
     }
 }
 .categoriesService{
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
   .small{
     background-color: white;
     @include smallService();
