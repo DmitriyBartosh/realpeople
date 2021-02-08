@@ -193,6 +193,14 @@ main{
       @include gift();
     }
 }
+.mainCategories{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+}
 .categoriesService{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
