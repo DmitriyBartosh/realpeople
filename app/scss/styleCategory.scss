@@ -1,3 +1,4 @@
+// Стили для блоков Красота
 @mixin makeUp {
   background-color: #ffb9c3;
   img{
@@ -62,5 +63,72 @@
   }
   & a:nth-child(5){
     @include massage();
+  }
+}
+
+// Стили для блоков Красота
+@mixin ceilings {
+  background-color: #00b45a;
+  img{
+    bottom: 0;
+    right: 0;
+    height: 140px;
+  }
+}
+@mixin cleaning {
+  background-color: #00c377;
+  img{
+    bottom: 50px;
+    left: 0;
+    height: 180px;
+  }
+}
+@mixin electronics {
+  background-color: #58d196;
+  img{
+    bottom: 10px;
+    height: 100px;
+  }
+}
+@mixin interior {
+  background-color: #a6e5c3;
+  img{
+    bottom: 10px;
+    height: 150px;
+  }
+}
+@mixin repairs {
+  background-color: #88e5af;
+  img{
+    bottom: 10px;
+    height: 100px;
+  }
+}
+
+.categoriesHouse{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include repairs();
+  }
+  & a:nth-child(2){
+    @include cleaning();
+  }
+  & a:nth-child(3){
+    @include interior();
+  }
+  & a:nth-child(4){
+    @include electronics();
+  }
+  & a:nth-child(5){
+    @include ceilings();
   }
 }
