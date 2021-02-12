@@ -1,0 +1,114 @@
+@mixin textHeader {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1.2rem;
+  margin: 0.5rem 0px;
+}
+
+@mixin textNormal {
+  font-family: 'Nunito-Regular', sans-serif;
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-top: 0.75rem;
+}
+
+@mixin textLink {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+
+$storyColor: white;
+
+.listMasters{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  .master{
+    width: 100%;
+    margin: 5px auto;
+    padding: 5px 0;
+    &__block{
+      display: grid;
+      grid-template-columns: 90px 2fr 1fr;
+      position: relative;
+      margin-bottom: 10px;
+      .story{
+        content: '';
+        position: absolute;
+        width: 68px;
+        height: 68px;
+        border: 2px solid $storyColor;
+        border-radius: 50%;
+      }
+    }
+    &__avatar{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-right: 20px;
+      img{
+        display: block;
+        position: absolute;
+        left: -25%;
+        height: 100%;
+      }
+    }
+    &__info{
+      position: relative;
+      color: white;
+      h3{
+        @include textHeader();
+      }
+      a{
+        display: block;
+        color: inherit;
+        @include textNormal();
+      }
+    }
+    &__link{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a{
+        padding: 5px;
+        margin: 0 5px;
+      }
+    }
+    .masterContent{
+
+      &__link{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      &__button{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+        padding: 10px 0px;
+        img{
+        width: 30px;
+        height: 30px;
+        }
+        p{
+          color: white;
+          @include textLink();
+        }
+      }
+    }
+  }
+}

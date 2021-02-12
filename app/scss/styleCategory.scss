@@ -132,3 +132,70 @@
     @include ceilings();
   }
 }
+
+// Стили для блоков Еда
+@mixin products {
+  background-color: #ffac33;
+  img{
+    bottom: 0px;
+    height: 115px;
+  }
+}
+@mixin fastfood {
+  background-color: #f35000;
+  img{
+    top: 30px;
+    right: 0px;
+    height: 250px;
+  }
+}
+@mixin catering {
+  background-color: #fda157;
+  img{
+    left: 0px;
+    bottom: 0px;
+    height: 200px;
+  }
+}
+@mixin sweets {
+  background-color: #ff8429;
+  img{
+    bottom: 10px;
+    height: 100px;
+  }
+}
+@mixin burgers {
+  background-color: #e56d00;
+  img{
+    bottom: 0px;
+    height: 125px;
+  }
+}
+
+.categoriesEat{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include products();
+  }
+  & a:nth-child(2){
+    @include fastfood();
+  }
+  & a:nth-child(3){
+    @include catering();
+  }
+  & a:nth-child(4){
+    @include sweets();
+  }
+  & a:nth-child(5){
+    @include burgers();
+  }
+}

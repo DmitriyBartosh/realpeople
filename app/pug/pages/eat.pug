@@ -12,23 +12,22 @@ html(lang="ru")
           h2 Еда
           p Выберите магазин или услугу
           .categoryEat
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
+        .categories.categoriesEat
+          a(href="").categories__button.small
+            p Продукты
+            img(src="img/eat/block/products.svg", alt="")
+          a(href="").categories__button.long
+            p Готовая еда
+            img(src="img/eat/block/fastfood.svg", alt="")
+          a(href="").categories__button.long
+            p Кейтеринг
+            img(src="img/eat/block/catering.svg", alt="")
+          a(href="").categories__button.small
+            p Сладости
+            img(src="img/eat/block/sweets.svg", alt="")
+          a(href="").categories__button.wide
+            p Бургеры
+            img(src="img/eat/block/burgers.svg", alt="")
       include ../layout/categoryNav.pug
       
       script(src="js/bundle.js")
