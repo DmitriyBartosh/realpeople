@@ -12,23 +12,22 @@ html(lang="ru")
           h2 Авто
           p Выберите магазин или услугу
           .categoryAuto
-        .categories.categoriesService
-          .categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
+        .categories.categoriesAuto
+          a.categories__button.small
+            p Ремонт
+            img(src="img/auto/block/repairs.svg", alt="")
+          a.categories__button.long
+            p Обслуживание
+            img(src="img/auto/block/service.svg", alt="")
+          a.categories__button.long
+            p Аренда авто
+            img(src="img/auto/block/rent.svg", alt="")
+          a.categories__button.small
+            p Химчистка
+            img(src="img/auto/block/drycleaning.svg", alt="")
+          a.categories__button.wide
+            p Установка аудиосистемы
+            img(src="img/auto/block/audio.svg", alt="")
       include ../layout/categoryNav.pug
       
       script(src="js/bundle.js")

@@ -33,7 +33,7 @@ $colorCategoryDesc: rgb(73, 73, 73);
 
 @mixin beauty {
   background: rgb(242,66,132);
-  background: linear-gradient(120deg, rgba(242,66,132,1) 0%, rgba(242,66,84,1) 100%);
+  background: linear-gradient(120deg, rgba(255,103,148,1) 0%, rgba(252,146,182,1) 100%);
   img{
     position: absolute;
     bottom: -25%;
@@ -43,7 +43,7 @@ $colorCategoryDesc: rgb(73, 73, 73);
 
 @mixin eat {
   background: rgb(255,140,0);
-  background: linear-gradient(240deg, rgba(255,140,0,1) 0%, rgba(255,165,0,1) 100%);
+  background: linear-gradient(240deg, rgba(243,80,0,1) 0%, rgba(255,132,41,1) 100%);
   img{
     position: absolute;
     top: 15%;
@@ -54,7 +54,7 @@ $colorCategoryDesc: rgb(73, 73, 73);
 
 @mixin auto {
   background: rgb(255,215,0);
-  background: linear-gradient(120deg, rgba(255,215,0,1) 0%, rgba(255,255,0,1) 100%);
+  background: linear-gradient(120deg, rgba(255,226,0,1) 0%, rgba(255,239,110,1) 100%);
   img{
     position: absolute;
     bottom: 5%;
@@ -65,7 +65,7 @@ $colorCategoryDesc: rgb(73, 73, 73);
 
 @mixin home {
   background: rgb(50,205,50);
-  background: linear-gradient(120deg, rgba(50,205,50,1) 0%, rgba(144,238,144,1) 100%);
+  background: linear-gradient(120deg, rgba(0,180,90,1) 0%, rgba(88,209,150,1) 100%);
   img{
     position: absolute;
     top: 15%;

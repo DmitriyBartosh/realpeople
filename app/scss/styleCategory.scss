@@ -199,3 +199,71 @@
     @include burgers();
   }
 }
+
+// Стили для блоков Авто
+@mixin repairs {
+  background-color: #ffe406;
+  img{
+    bottom: 0px;
+    left: 20px;
+    height: 90px;
+  }
+}
+@mixin service {
+  background-color: #ffef6e;
+  img{
+    bottom: 30px;
+    left: 25px;
+    height: 200px;
+  }
+}
+@mixin rent {
+  background-color: #ffe473;
+  img{
+    left: 10px;
+    top: 75px;
+    height: 150px;
+  }
+}
+@mixin drycleaning {
+  background-color: #ffcb33;
+  img{
+    bottom: 0px;
+    height: 110px;
+  }
+}
+@mixin audio {
+  background-color: #ffe200;
+  img{
+    bottom: 10px;
+    height: 90px;
+  }
+}
+
+.categoriesAuto{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include repairs();
+  }
+  & a:nth-child(2){
+    @include service();
+  }
+  & a:nth-child(3){
+    @include rent();
+  }
+  & a:nth-child(4){
+    @include drycleaning();
+  }
+  & a:nth-child(5){
+    @include audio();
+  }
+}
