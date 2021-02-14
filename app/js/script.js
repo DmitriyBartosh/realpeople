@@ -1,6 +1,10 @@
 // import Swiper JS
 import Swiper from 'swiper';
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
 
 const swiper = new Swiper('.categoryNav__container', {
   spaceBetween: 15,
@@ -23,15 +27,17 @@ let master = document.querySelectorAll(".master");
 
 function openGallery(i){
   let gallary = document.querySelector("#gallary_" + [i]);
-  let gallaryPhoto = document.querySelector("#gallary_" + [i]).childNodes;
+  let gallaryPhoto = '#gallary_' + [i] + ' div';
   const openGallery = gsap
     .timeline()
-    .set(gallary, {height: 508});
+    .to(gallary, {height: 508})
+    .to(window, {duration: 1 ,scrollTo: gallary, ease: "power2.inOut"})
+    .from(gallaryPhoto, {opacity: 0, scale: 0.8, stagger: 0.1, ease: "power2.inOut"}, '-=0.75');
 }
 
 function openCallback(i){
   let callback = document.querySelector("#callback_" + [i]);
-  let callbackLink = document.querySelector("#callback_" + [i]).childNodes;
+  let callbackLink = '#callback_' + [i] + ' a';
   const openCallback = gsap
     .timeline()
     .to(callback, {height: 188})

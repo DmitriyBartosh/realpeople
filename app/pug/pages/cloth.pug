@@ -12,23 +12,22 @@ html(lang="ru")
           h2 Одежда
           p Выберите магазин или услугу
           .categoryCloth
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
+        .categories.categoriesCloth
+          a(href="").categories__button.small
+            p Аксессуары
+            img(src="img/cloth/block/accessories.svg", alt="")
+          a(href="").categories__button.long
+            p Одежда
+            img(src="img/cloth/block/clothes.svg", alt="")
+          a(href="").categories__button.long
+            p Обувь
+            img(src="img/cloth/block/shoes.svg", alt="")
+          a(href="").categories__button.small
+            p Сумки
+            img(src="img/cloth/block/bag.svg", alt="")
+          a(href="").categories__button.wide
+            p Женская одежда
+            img(src="img/cloth/block/womenclothes.svg", alt="")
       include ../layout/categoryNav.pug
       
       script(src="js/bundle.js")

@@ -12,23 +12,22 @@ html(lang="ru")
           h2 Подарки
           p Выберите магазин или услугу
           .categoryGift
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
+        .categories.categoriesGift
+          a(href="").categories__button.small
+            p Подарки
+            img(src="img/gift/block/gift.svg", alt="")
+          a(href="").categories__button.long
+            p Организаия мероприятий
+            img(src="img/gift/block/events.svg", alt="")
+          a(href="").categories__button.long
+            p Артисты
+            img(src="img/gift/block/artists.svg", alt="")
+          a(href="").categories__button.small
+            p Фото/Видео
+            img(src="img/gift/block/photo.svg", alt="")
+          a(href="").categories__button.wide
+            p Ведущие/Диджеи
+            img(src="img/gift/block/DJ.svg", alt="")
       include ../layout/categoryNav.pug
       
       script(src="js/bundle.js")

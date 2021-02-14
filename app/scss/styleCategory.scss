@@ -267,3 +267,135 @@
     @include audio();
   }
 }
+
+// Стили для блоков Одежда
+@mixin accessories {
+  background-color: #931ca0;
+  img{
+    bottom: 10px;
+    height: 90px;
+  }
+}
+@mixin clothes {
+  background-color: #d670e1;
+  img{
+    bottom: 0px;
+    left: 0px;
+    height: 225px;
+  }
+}
+@mixin shoes {
+  background-color: #e097e9;
+  img{
+    bottom: 0px;
+    height: 225px;
+  }
+}
+@mixin bag {
+  background-color: #e8b4ef;
+  img{
+    bottom: -20px;
+    height: 125px;
+  }
+}
+@mixin womenclothes {
+  background-color: #cc37d8;
+  img{
+    bottom: 0px;
+    right: 20px;
+    height: 115px;
+  }
+}
+
+.categoriesCloth{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include accessories();
+  }
+  & a:nth-child(2){
+    @include clothes();
+  }
+  & a:nth-child(3){
+    @include shoes();
+  }
+  & a:nth-child(4){
+    @include bag();
+  }
+  & a:nth-child(5){
+    @include womenclothes();
+  }
+}
+
+// Стили для блоков Подарки
+@mixin gift {
+  background-color: #f50000;
+  img{
+    bottom: 0px;
+    height: 100px;
+  }
+}
+@mixin events {
+  background-color: #b30000;
+  img{
+    bottom: 0px;
+    height: 225px;
+  }
+}
+@mixin artists {
+  background-color: #fa3c20;
+  img{
+    bottom: 0px;
+    height: 225px;
+  }
+}
+@mixin photo {
+  background-color: #950000;
+  img{
+    bottom: -20px;
+    height: 125px;
+  }
+}
+@mixin DJ {
+  background-color: #f92405;
+  img{
+    bottom: 0px;
+    height: 90px;
+  }
+}
+
+.categoriesGift{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include gift();
+  }
+  & a:nth-child(2){
+    @include events();
+  }
+  & a:nth-child(3){
+    @include artists();
+  }
+  & a:nth-child(4){
+    @include photo();
+  }
+  & a:nth-child(5){
+    @include DJ();
+  }
+}
