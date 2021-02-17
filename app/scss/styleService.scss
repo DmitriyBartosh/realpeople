@@ -49,12 +49,14 @@ $colorBodyText: white;
 
 .serviceHeader{
   position: relative;
-  height: 100px;
+  height: 175px;
   padding: 10px;
-  margin: 10px;
-  border-radius: 15px;
   &__info{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     color: white;
     text-align: center;
@@ -63,17 +65,14 @@ $colorBodyText: white;
       position: relative;
       display: flex;
       justify-content: center;
+      border-bottom: 1px solid;
+      margin: 0 auto;
+      padding-bottom: 10px;
+      width: 125px;
       @include textHeader();
-      &::after{
-        content: '';
-        position: absolute;
-        bottom: -7px;
-        background: white;
-        width: 125px;
-        height: 1px;
-      }
     }
     p{
+      margin: 10px auto;
       @include textNormal();
     }
   }
@@ -85,6 +84,9 @@ $colorBodyText: white;
     right: 0;
     bottom: 0;
     background-color: rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 
+        inset 0 60px 60px -40px rgba(0, 0, 0, 1), 
+        inset 0 -100px 60px -40px rgba(0, 0, 0, 1);
   }
 }
 
