@@ -12,23 +12,34 @@ html(lang="ru")
           h2 Движение
           p Выберите магазин или услугу
           .categoryMotion
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
-      include ../layout/categoryNav.pug
+        .categories.categoriesMotion
+          a(href="").categories__button.small
+            p Спорт
+            img(src="img/motion/block/sport.svg", alt="")
+          a(href="").categories__button.long
+            p Отдых
+            img(src="img/motion/block/relaxation.svg", alt="")
+          a(href="").categories__button.long
+            p Мероприятия
+            img(src="img/motion/block/activity.svg", alt="")
+          a(href="").categories__button.small
+            p Туры
+            img(src="img/motion/block/tours.svg", alt="")
+          a(href="").categories__button.wide
+            p Спортивные товары
+            img(src="img/motion/block/sportinggoods.svg", alt="")
+      nav.categoryNav
+        .categoryNav__back
+          a(href="/")
+            img(src="img/icon/backspace.svg", alt="")
+        .categoryNav__link
+          .categoryNav__container
+            .swiper-wrapper
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
       
       script(src="js/bundle.js")

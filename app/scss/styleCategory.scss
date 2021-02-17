@@ -44,7 +44,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -111,7 +110,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -178,7 +176,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -246,7 +243,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -313,7 +309,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -378,7 +373,6 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   grid-gap: 10px;
-  width: 100%;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -397,5 +391,136 @@
   }
   & a:nth-child(5){
     @include DJ();
+  }
+}
+
+// Стили для блоков Обучение
+@mixin tutor {
+  background-color: #92d5f6;
+  img{
+    bottom: 0px;
+    right: 0px;
+    height: 100px;
+  }
+}
+@mixin courses {
+  background-color: #42adea;
+  img{
+    bottom: 0px;
+    right: 0px;
+    height: 225px;
+  }
+}
+@mixin сhildreneducation {
+  background-color: #66d0f4;
+  img{
+    bottom: 0px;
+    height: 225px;
+  }
+}
+@mixin selfdevelopment {
+  background-color: #71caf4;
+  img{
+    bottom: -20px;
+    height: 125px;
+  }
+}
+@mixin browistcourses {
+  background-color: #2576bf;
+  img{
+    bottom: 0px;
+    right: 0px;
+    height: 125px;
+  }
+}
+
+.categoriesTraining{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include tutor();
+  }
+  & a:nth-child(2){
+    @include courses();
+  }
+  & a:nth-child(3){
+    @include сhildreneducation();
+  }
+  & a:nth-child(4){
+    @include selfdevelopment();
+  }
+  & a:nth-child(5){
+    @include browistcourses();
+  }
+}
+
+// Стили для блоков Движение
+@mixin sport {
+  background-color: #00acbd;
+  img{
+    bottom: 0px;
+    height: 100px;
+  }
+}
+@mixin relaxation {
+  background-color: #3fa5b0;
+  img{
+    bottom: 0px;
+    width: 100%;
+  }
+}
+@mixin activity {
+  background-color: #2b747c;
+  img{
+    bottom: 0px;
+    width: 100%;
+  }
+}
+@mixin tours {
+  background-color: #2b747c;
+  img{
+    bottom: 10px;
+    height: 100px;
+  }
+}
+@mixin sportinggoods {
+  background-color: #55afb7;
+  img{
+    bottom: 0px;
+    height: 100px;
+  }
+}
+
+.categoriesMotion{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  grid-gap: 10px;
+  margin-bottom: 60px;
+  a img{
+    position: absolute;
+  }
+  & a:nth-child(1){
+    @include sport();
+  }
+  & a:nth-child(2){
+    @include relaxation();
+  }
+  & a:nth-child(3){
+    @include activity();
+  }
+  & a:nth-child(4){
+    @include tours();
+  }
+  & a:nth-child(5){
+    @include sportinggoods();
   }
 }

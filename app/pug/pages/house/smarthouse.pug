@@ -19,6 +19,9 @@ html(lang="ru")
           p Мы подберём для решения вашей задачи оборудование, установим умные счётчики, датчики, систему защиты от протечек, развернем систему автоматизированного учёта ресурсов.
           a(href="https://realpeople24.ru/shop/smarthouse/") Перейти в магазин
 
-      include ../../layout/serviceNav.pug
+      nav.serviceNav
+        .serviceNav__back
+          a(href="#" onclick="history.back();return false;")
+            img(src="img/icon/back.svg", alt="")
       
       script(src="../js/bundle.js")

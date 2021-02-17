@@ -101,7 +101,8 @@ function styles(){
         'app/scss/style.scss',
         'app/scss/styleService.scss',
         'app/scss/styleCategory.scss',
-        'app/scss/styleFreelance.scss'
+        'app/scss/styleFreelance.scss',
+        'app/scss/headerPromo.scss'
     ])
     .pipe(scss({outputStyle: 'compressed'}))
     .pipe(concat('style.min.css'))

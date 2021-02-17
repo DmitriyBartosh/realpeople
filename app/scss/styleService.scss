@@ -49,30 +49,124 @@ $colorBodyText: white;
 
 .serviceHeader{
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px;
   height: 100px;
   padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
   &__info{
     position: relative;
     height: 100%;
     color: white;
+    text-align: center;
+    z-index: 5;
     h2{
+      position: relative;
+      display: flex;
+      justify-content: center;
       @include textHeader();
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: -7px;
+        background: white;
+        width: 125px;
+        height: 1px;
+      }
     }
     p{
       @include textNormal();
     }
   }
-  &__logo{
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+}
+
+.serviceNav{
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 10px;
+  background-color: rgba(0,0,0,0.8);
+  width: calc(100% - 20px);
+  padding: 10px;
+  z-index: 100;
+  &__back{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    img{
-      width: 60px;
-      height: 60px;
+    justify-content: center;
+    height: 40px;
+    width: 60px;
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      img{
+        position: relative;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  &__category{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      p{
+        color: white;
+        font-family: 'Raleway-Bold', sans-serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+    }
+    &::after,
+    &::before{
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 20px;
+      background-color: white;
+    }
+    &::after{
+      left: -5px;
+    }
+    &::before{
+      right: -5px;
+    }
+  }
+  &__home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      p{
+        color: white;
+        font-family: 'Raleway-Bold', sans-serif;
+        font-size: 1.2rem;
+      }
     }
   }
 }

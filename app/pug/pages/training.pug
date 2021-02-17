@@ -12,23 +12,35 @@ html(lang="ru")
           h2 Обучение
           p Выберите магазин или услугу
           .categoryTraining
-        .categories.categoriesService
-          a(href="service.html").categories__button.wide
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Магазин
-          .categories__button.small
-            p Услуга
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Магазин
-          .categories__button.long
-            p Услуга
-          .categories__button.small
-            p Услуга
-      include ../layout/categoryNav.pug
+        .categories.categoriesTraining
+          a(href="").categories__button.small
+            p Репетиторы
+            img(src="img/training/block/tutor.svg", alt="")
+          a(href="").categories__button.long
+            p Курсы
+            img(src="img/training/block/courses.svg", alt="")
+          a(href="").categories__button.long
+            p Детям
+            img(src="img/training/block/сhildreneducation.svg", alt="")
+          a(href="").categories__button.small
+            p Саморазвитие
+            img(src="img/training/block/selfdevelopment.svg", alt="")
+          a(href="").categories__button.wide
+            p Курсы бровиста
+            img(src="img/training/block/browistcourses.svg", alt="")
+            
+      nav.categoryNav
+        .categoryNav__back
+          a(href="/")
+            img(src="img/icon/backspace.svg", alt="")
+        .categoryNav__link
+          .categoryNav__container
+            .swiper-wrapper
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
       
       script(src="js/bundle.js")

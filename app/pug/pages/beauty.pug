@@ -28,6 +28,19 @@ html(lang="ru")
           a(href="").categories__button.wide
             p Массаж
             img(src="img/beauty/block/massage.svg", alt="")
-      include ../layout/categoryNav.pug
+      
+      nav.categoryNav
+        .categoryNav__back
+          a(href="/")
+            img(src="img/icon/backspace.svg", alt="")
+        .categoryNav__link
+          .categoryNav__container
+            .swiper-wrapper
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
       
       script(src="js/bundle.js")
