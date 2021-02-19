@@ -15,6 +15,13 @@
   font-family: 'Nunito-SemiBold', sans-serif;
   font-size: 1rem;
   margin-top: 0.75rem;
+  text-align: center;
+  color: white;
+}
+
+@mixin textureBlock {
+  opacity: 0.15;
+  background-image: url('../img/texture/fake_brick.png');
 }
 
 $storyColor: white;
@@ -29,14 +36,15 @@ $storyColor: white;
   min-height: calc(100vh - 230px);
   margin: 10px;
   .master{
+    position: relative;
     width: 100%;
     margin: 5px auto;
     padding: 5px 0;
     &__block{
       display: grid;
-      grid-template-columns: 90px 2fr 1fr;
+      grid-template-columns: 90px 1fr 60px;
+      grid-template-rows: 78px;
       position: relative;
-      margin-bottom: 10px;
       .story{
         content: '';
         position: absolute;
@@ -46,6 +54,76 @@ $storyColor: white;
         border-radius: 50%;
       }
     }
+
+    &__nav{
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 50px);
+      row-gap: 5px;
+      column-gap: 5px;
+      z-index: 20;
+      height: 0px;
+      overflow: hidden;
+      &__button{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        P{
+          @include textLink();
+          text-align: center;
+          margin: 0px;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          @include textureBlock();
+        }
+      }
+      &__button:nth-child(1){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: 1 / 1 / 3 / 1;
+        background-color: #ffb9c3;
+        img{
+          width: 12px;
+          height: 12px;
+          margin-bottom: 5px;
+        }
+        p{
+          margin: 0px;
+          line-height: 16px;
+        }
+      }
+      &__button:nth-child(2){
+        grid-area: 1 / 2 / 2 / 3;
+        background-color: #fc92b6;
+      }
+      &__button:nth-child(3){
+        grid-area: 1 / 3 / 2 / 5;
+        background-color: #ffc5d6;
+      }
+      &__button:nth-child(4){
+        grid-area: 2 / 2 / 3 / 4;
+        background-color: #ffc5d6;
+      }
+      &__button:nth-child(5){
+        grid-area: 2 / 4 / 3 / 6;
+        background-color: #ffc5d6;
+      }
+      &__button:nth-child(6){
+        grid-area: 1 / 5 / 2 / 6;
+        background-color: #ffc5d6;
+      }
+    }
+
     &__avatar{
       position: relative;
       display: flex;
@@ -69,6 +147,7 @@ $storyColor: white;
     &__info{
       position: relative;
       color: white;
+      padding-right: 15px;
       h3{
         @include textHeader();
       }
@@ -82,21 +161,47 @@ $storyColor: white;
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      a{
-        padding: 5px;
-        margin: 0 5px;
+      justify-content: flex-start;
+      flex-direction: column;
+      z-index: 5;
+      &__openNavButton{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 73px;
+        border-radius: 15px;
+        img{
+          width: 25px;
+          height: 25px;
+        }
+        p{
+          @include textLink();
+          margin:0px;
+          margin-top: 5px;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          @include textureBlock();
+        }
       }
     }
     .masterContent{
 
       &__link{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
-        padding: 10px 0px;
         overflow: hidden;
         height: 0px;
+        margin-top: 10px;
       }
       &__button{
         position: relative;
@@ -104,14 +209,17 @@ $storyColor: white;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 25%;
+        width: 30%;
         padding: 10px 0px;
+        background-color: rgb(20,20,20);
+        border-radius: 15px;
         img{
         width: 30px;
         height: 30px;
         }
         p{
           color: white;
+          margin: 0px;
           @include textLink();
         }
       }

@@ -7,25 +7,58 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
 
 // Анимация для списка ссылок и галереи (Freelance)
-let master = document.querySelectorAll(".master");
+let openButton = document.querySelectorAll(".master__link__openNavButton");
+let linksMaster = document.querySelectorAll(".master__nav");
+let messengerMaster = document.querySelectorAll(".messenger");
 
-function openCallback(i){
-  let callback = document.querySelector("#callback_" + [i]);
-  let callbackLink = '#callback_' + [i] + ' a';
-  const openCallback = gsap
+// Добавление слушателя событий на кнопки открыть навигацию и открыть мессенджер
+for (var i = 0; i < openButton.length; i++) {
+  openButton[i].id = 'masterOpenButton_' + [i];
+  linksMaster[i].id = 'linksMaster_' + [i];
+  messengerMaster[i].id = 'messenger_' + [i];
+
+  var openNavigation = document.querySelector('#masterOpenButton_' + [i]);
+  var openMessenger = document.querySelector('#messenger_' + [i]);
+
+  let index = i;
+  openNavigation.addEventListener("click", () => openNav(index));
+  openMessenger.addEventListener("click", () => openMess(index));
+}
+
+// Открыть навигацию анкеты
+function openNav(i){
+  var linkNav = document.querySelector("#linksMaster_" + [i]);
+  var childLinkNav = '#linksMaster_' + [i] + ' a';
+  var linkIconNav = '#masterOpenButton_' + [i] + ' img';
+
+  const openNav = gsap
     .timeline()
-    .to(callback, {height: 188})
-    .from(callbackLink, {opacity: 0, y: 5, stagger: 0.1}, '-=0.2');
+    .to(linkIconNav, {rotate: 45})
+    .to(linkNav, {height: 105}, "<")
+    .from(childLinkNav, {opacity: 0, scale: 0.9, stagger: {from: "random", amount: 0.5}}, '-=0.2');
 }
 
-for (var i = 0; i < master.length; i++) {
-let linkCallback = document.querySelector("#linkCallback_" + [i+1]);
-let index = i + 1;
+// Открыть мессенджер
+function openMess(i){
+  var linkMess = document.querySelector("#callback_" + [i]);
+  var childLinkMess = '#callback_' + [i] + ' a';
+  var childLinkNav = '#linksMaster_' + [i] + ' a';
+  var linkIconMess = '#messenger_' + [i];
 
-linkCallback.addEventListener("click", () => openCallback(index))
+  const openMess = gsap
+    .timeline()
+    .to(childLinkNav, {opacity: 0.2, stagger: 0.1})
+    .set(linkIconMess, {opacity: 1}, '<')
+    .to(linkMess, {height: 84}, "<")
+    .from(childLinkMess, {opacity: 0, y: -5, stagger: {from: "random", amount: 0.5}}, '-=0.2');
 }
 
-const swiper = new Swiper('.categoryNav__container', {
+// Добавить слайдер для Подкатегорий
+let swiperContainer = document.querySelector('.categoryNav__container');
+
+if(swiperContainer){
+  console.log('SwiperInit');
+const swiper = new Swiper(swiperContainer, {
   spaceBetween: 15,
   freeMode: true,
   breakpoints: {
@@ -40,3 +73,4 @@ const swiper = new Swiper('.categoryNav__container', {
     }
   }
 });
+}

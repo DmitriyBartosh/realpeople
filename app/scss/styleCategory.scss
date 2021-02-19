@@ -43,7 +43,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -65,7 +66,7 @@
   }
 }
 
-// Стили для блоков Красота
+// Стили для блоков Дом
 @mixin ceilings {
   background-color: #00b45a;
   img{
@@ -109,7 +110,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -175,7 +177,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -242,7 +245,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -308,7 +312,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -372,7 +377,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -439,7 +445,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;
@@ -503,7 +510,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
   a img{
     position: absolute;

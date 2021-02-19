@@ -214,14 +214,16 @@ a{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
 }
 .categoriesService{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, 150px);
-  grid-gap: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
   margin-bottom: 60px;
 }
 
