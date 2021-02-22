@@ -9,30 +9,32 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
 // Анимация для списка ссылок и галереи (Freelance)
 let openButton = document.querySelectorAll(".master__link__openNavButton");
 let linksMaster = document.querySelectorAll(".master__nav");
+let links = [];
 
 // Добавление слушателя событий на кнопки открыть навигацию и открыть мессенджер
-for (var i = 0; i < openButton.length; i++) {
-  openButton[i].id = 'masterOpenButton_' + [i];
-  linksMaster[i].id = 'linksMaster_' + [i];
+for (let i = 0; i < openButton.length; i++) {
+  links[i] = linksMaster[i].querySelectorAll('.master__nav__button');
 
-  var openNavigation = document.querySelector('#masterOpenButton_' + [i]);
+  var openNavTl = gsap.timeline({paused: true, reversed: true});
+    
+  openNavTl
+    .to(linksMaster[i], {height: 108})
+    .from(links[i], {opacity: 0, scale: 0.9, stagger: {from: "end", amount: 0.5}}, '-=0.3');
 
-  let index = i;
-  openNavigation.addEventListener("click", () => openNav(index));
+  linksMaster[i].anim = openNavTl;
+
+  openButton[i].addEventListener('click', function(e){
+    e.preventDefault();
+    this.classList.toggle('active');
+
+    linksMaster[i].anim.reversed() ? linksMaster[i].anim.play() : linksMaster[i].anim.reverse();
+  });
 }
 
-// Открыть навигацию анкеты
-function openNav(i){
-  var linkNav = document.querySelector("#linksMaster_" + [i]);
-  var childLinkNav = '#linksMaster_' + [i] + ' a';
-  var linkIconNav = '#masterOpenButton_' + [i] + ' img';
-
-  const openNav = gsap
-    .timeline()
-    .to(linkIconNav, {rotate: 45})
-    .to(linkNav, {height: 105}, "<")
-    .from(childLinkNav, {opacity: 0, scale: 0.9, stagger: {from: "random", amount: 0.5}}, '-=0.2');
-}
+// var openNav = gsap.timeline()
+//   .to('#navContent_0', {height: 108})
+//   .from('#navContent_0 .master__nav__button', {opacity: 0, scale: 0.9, stagger: {from: "end", amount: 0.5}}, '-=0.3');
+// openNav.pause();
 
 // Добавить слайдер для Подкатегорий
 let swiperContainer = document.querySelector('.categoryNav__container');
