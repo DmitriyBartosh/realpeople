@@ -7,6 +7,15 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
 
+// Высота мобильного браузера
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 // Анимация для списка ссылок и галереи (Freelance)
 let openButton = document.querySelectorAll(".master__link__openNavButton");
 let linksMaster = document.querySelectorAll(".master__nav");
