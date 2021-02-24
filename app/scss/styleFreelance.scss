@@ -340,7 +340,7 @@ $storyColor: white;
     justify-content: space-around;
     width: 100%;
     padding: 10px 0px;
-    z-index: 120;
+    z-index: 200;
     a{
       position: relative;
       display: flex;
@@ -357,10 +357,10 @@ $storyColor: white;
       }
     }
     .actionButton{
-      background-color: rgba(255, 0, 0, 0.25);
+      background-color: rgba(255, 0, 0, 0.4);
     }
     .closeButton{
-      background-color: rgba(0,0,0,0.25);
+      background-color: rgba(0,0,0,0.4);
     }
   }
 }
