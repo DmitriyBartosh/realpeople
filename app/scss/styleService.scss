@@ -4,11 +4,19 @@ $colorBodyText: white;
 @mixin textHeader {
   font-family: 'Nunito-SemiBold', sans-serif;
   font-size: 1.5rem;
+  color: white;
 }
 
 @mixin textNormal {
   font-family: 'Nunito-Regular', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+@mixin textLink {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1rem;
+  color: white;
 }
 
 .mainOption{
@@ -29,6 +37,7 @@ $colorBodyText: white;
     padding: 0 25px;
     font-weight: 300;
     line-height: 1.5rem;
+    max-width: 300px;
     @include textNormal();
   }
   a{
@@ -74,6 +83,7 @@ $colorBodyText: white;
     p{
       margin: 10px auto;
       @include textNormal();
+      line-height: 22px;
     }
   }
   &::after{
@@ -85,6 +95,113 @@ $colorBodyText: white;
     bottom: -1px;
     background-color: rgba($color: #000000, $alpha: 0.5);
     box-shadow: inset 0px -100px 100px 0px rgba(0, 0, 0, 1);
+  }
+}
+.serviceContent{
+  position: relative;
+  top: -50px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  min-height: calc(100vh - 215px);
+  &__mainAction{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+      @include textLink();
+      background: #1f1f1f;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 30px;
+      margin: 10px auto;
+      border-radius: 15px;
+    }
+  }
+  &__navigation{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    row-gap: 5px;
+    column-gap: 5px;
+    margin-top: 40px;
+    padding: 10px;
+    a{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include textLink();
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      img{
+        height: 20px;
+      }
+      p{
+        margin: 0;
+      }
+    }
+    .small{
+      grid-row: span 1;
+      grid-column: span 1;
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .long{
+      grid-row: span 2;
+      grid-column: span 1;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.4);
+      img{
+        margin-bottom: 5px;
+      }
+    }
+    .wide{
+      grid-row: span 1;
+      grid-column: span 2;
+      background: rgba(255, 255, 255, 0.25);
+      img{
+        margin-right: 5px;
+      }
+    }
+  }
+  &__popularProduct{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    .productContainer{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+      .productBlock{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100px;
+        transition-property: transform;
+        border-radius: 15px;
+        @include textLink();
+        background-color: rgb(65, 65, 65);
+      }
+    }
   }
 }
 

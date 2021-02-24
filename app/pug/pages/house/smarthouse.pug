@@ -7,21 +7,55 @@ html(lang="ru")
         link(rel="stylesheet", href="../css/style.min.css")
     body
       main
-        .serviceHeader
+        .serviceHeader.promoSmarthouse
           .serviceHeader__info
             h2 Умный дом
-            p +7 999 999 99 99
-            p ул. Ленина 1
-          .serviceHeader__logo
-            img(src="../img/logo/smarthouse.svg", alt="")
-        .mainOption
-          h1 Автоматизация
-          p Мы подберём для решения вашей задачи оборудование, установим умные счётчики, датчики, систему защиты от протечек, развернем систему автоматизированного учёта ресурсов.
-          a(href="https://realpeople24.ru/shop/smarthouse/") Перейти в магазин
+            p Подберём для Вас оборудование, установим умные счётчики, датчики, систему защиты от протечек, развернем систему автоматизированного учёта ресурсов.
 
-      nav.serviceNav
-        .serviceNav__back
-          a(href="#" onclick="history.back();return false;")
-            img(src="img/icon/back.svg", alt="")
+        .serviceContent 
+          .serviceContent__mainAction 
+            a(href="") Магазин
+            a(href="") Консультация
+          
+          .serviceContent__navigation
+            a(href="").long
+              img(src="../img/icon/place.svg", alt="")
+              p Карта
+            a(href="").wide
+              img(src="../img/icon/gallary.svg", alt="")
+              p О нас
+            a(href="").long
+              img(src="../img/icon/phone.svg", alt="")
+              p Звонок
+            a(href="").small Звонок
+            a(href="").small 
+              img(src="../img/icon/whatsapp.svg", alt="")
+          
+          .serviceContent__popularProduct
+            .swiper-wrapper.productContainer
+              .swiper-slide.productBlock
+                p Товар 1
+              .swiper-slide.productBlock
+                p Товар 2
+              .swiper-slide.productBlock
+                p Товар 3
+              .swiper-slide.productBlock
+                p Товар 4
+              .swiper-slide.productBlock
+                p Товар 5
+              .swiper-slide.productBlock
+                p Товар 6
+
+        nav.serviceNav
+          .serviceNav__back
+            a(href="/realpeople/app/house.html")
+              img(src="../img/icon/backspace.svg", alt="")
+          .serviceNav__category 
+            a(href="/realpeople/app/house.html") 
+              p Категория | Дом
+          .serviceNav__home
+            a(href="/realpeople/app/")
+              p REAL
+              
       
       script(src="../js/bundle.js")

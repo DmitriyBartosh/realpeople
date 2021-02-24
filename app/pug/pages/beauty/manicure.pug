@@ -3,10 +3,13 @@ html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Умный дом | Реальные Люди
+        title Маникюр | Реальные Люди
         link(rel="stylesheet", href="../css/style.min.css")
     body
       main
+        include ../../layout/beauty/story/manicure.pug
+        include ../../layout/beauty/price/manicure.pug
+
         .serviceHeader.promoManicure
           .serviceHeader__info
             h2 Маникюр
@@ -16,43 +19,17 @@ html(lang="ru")
           .master
             .master__block
               .story
-              a.master__avatar
+              a(href="#").master__avatar
                 img(src="../img/beauty/freelance/manicure/avatar/1.jpg", alt="")
               .master__info
-                h3 Анна Маникюрова
-                p Дополнительная информация
+                h3 Катя Фролова
+                p Урванцева, 16
               .master__link
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
 
             .master__nav
-              a(href="#").master__nav__button 
-                img(src="../img/icon/ruble.svg", alt="")
-                p Цены
-              a(href="#").master__nav__button 
-                p Звонок
-              a.master__nav__button.messenger
-                p Мессенджеры
-              a(href="#").master__nav__button 
-                p Специальные предложения
-              a(href="#").master__nav__button 
-                p Карта
-              a(href="#").master__nav__button 
-                p Запись
-
-          .master
-            .master__block
-              .master__avatar
-                img(src="../img/beauty/freelance/manicure/avatar/2.jpg", alt="")
-              .master__info
-                h3 Ольга Шилакова
-                p Дополнительная информация
-              .master__link 
-                a.master__link__openNavButton
-                  img(src="../img/icon/add.svg", alt="")
-
-            .master__nav
-              a(href="#").master__nav__button 
+              a(href="#").master__nav__button.price
                 img(src="../img/icon/ruble.svg", alt="")
                 p Цены
               a(href="#").master__nav__button 
