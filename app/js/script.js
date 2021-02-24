@@ -63,6 +63,7 @@ if(sliderStory){
     var openStoryTl = gsap.timeline({paused: true, reversed: true});
 
     openStoryTl
+      .set('#story_' + [i], {display: 'block'})
       .to('#story_' + [i], {scale: 1, opacity: 1, duration: 0.2});
   
     storyBlock[i].anim = openStoryTl;
@@ -90,6 +91,7 @@ for(let i = 0; i < priceBlock.length; i++){
   var openPriceTl = gsap.timeline({defaults:{duration: 1}, paused: true, reversed: true});
 
   openPriceTl
+      .set('#priceBlock_' + [i], {display: 'flex'})
       .to('#priceBlock_' + [i], {clipPath: 'circle(100%)'})
       .from('#priceBlock_' + [i] + ' .priceBlock__container .priceBlock__cost', {opacity: 0, y: 30, stagger: 0.1, ease: "back.out(1.7)"}, "-=0.8");
   
