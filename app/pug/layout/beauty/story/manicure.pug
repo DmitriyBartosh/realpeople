@@ -25,6 +25,11 @@
     .swiper-button-next 
     .swiper-button-prev
 
-  .storyBlock__footerNav
-    a(href="").actionButton Записаться
-    a(href="").closeButton Закрыть
+  nav.storyNav
+    .storyNav__back
+      a(href="#").closeButton
+        img(src="../img/icon/backspace.svg", alt="")
+    .storyNav__callback
+      a(href="tel:+79832794026") 
+        img(src="../img/icon/phone.svg", alt="")
+        p Позвонить

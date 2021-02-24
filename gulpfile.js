@@ -96,8 +96,7 @@ function styles(){
     return src([
         'app/scss/font.scss',
         'app/scss/normalize.scss',
-        'app/scss/navCategory.scss',
-        'app/scss/navMain.scss',
+        'app/scss/navigation.scss',
         'app/scss/style.scss',
         'app/scss/styleService.scss',
         'app/scss/styleCategory.scss',

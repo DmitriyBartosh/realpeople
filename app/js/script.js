@@ -91,7 +91,7 @@ if(sliderStory){
 // Открыть Цена
 let priceBlock = document.querySelectorAll(".priceBlock");
 let priceButton = document.querySelectorAll(".price");
-let closePrice = document.querySelectorAll(".priceBlock__close");
+let closePrice = document.querySelectorAll(".closePrice");
 
 for(let i = 0; i < priceBlock.length; i++){
   priceBlock[i].id = 'priceBlock_' + [i];
@@ -106,9 +106,11 @@ for(let i = 0; i < priceBlock.length; i++){
   priceBlock[i].anim = openPriceTl;
 
   priceButton[i].addEventListener('click', function(){
+    priceBlock[i].anim.timeScale(1);
     priceBlock[i].anim.play();
   })
   closePrice[i].addEventListener('click', function(){
+    priceBlock[i].anim.timeScale(2);
     priceBlock[i].anim.reverse();
   })
 }

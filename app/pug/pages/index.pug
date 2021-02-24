@@ -35,6 +35,14 @@ html(lang="ru")
           a(href="motion.html").categories__button.categories__motion
             p Движение
             img(src="img/main/motion.svg", alt="")
-      include ../layout/mainNav.pug
+        
+        nav.mainNav
+          a#contact(href="")
+            img(src="img/icon/contact.svg", alt="")
+          a#contact.switch(href="")
+            img(src="img/icon/list.svg", alt="")
+            p список
+          a#about(href="")
+            p REAL
       
       script(src="js/bundle.js")
