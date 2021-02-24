@@ -63,8 +63,7 @@ if(sliderStory){
     var openStoryTl = gsap.timeline({paused: true, reversed: true});
 
     openStoryTl
-      .set('#story_' + [i], {display: 'block'})
-      .to('#story_' + [i], {scale: 1, opacity: 1, duration: 0.2});
+      .to('#story_' + [i], {scale: 1, autoAlpha: 1, duration: 0.2});
   
     storyBlock[i].anim = openStoryTl;
 
