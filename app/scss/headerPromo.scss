@@ -11,6 +11,12 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.promoEyebrow{
+  background-image: url(../img/beauty/freelance/eyebrow/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 // Промо для Дом
 .promoSmarthouse{
   background-image: url(../img/house/shop/smarthouse/background.jpg);
@@ -20,6 +26,26 @@
 }
 .promoCeiling{
   background-image: url(../img/house/shop/ceiling/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+// Промо для Еда
+.promoUsadbaHall{
+  background-image: url(../img/eat/service/usadba_hall/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.promoDessert{
+  background-image: url(../img/eat/freelance/dessert/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+// Промо для Праздники
+.promoPhoto{
+  background-image: url(../img/gift/freelance/photo/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -11,21 +11,26 @@ $colorCategoryDesc: rgb(73, 73, 73);
   font-size: 1.25rem;
 }
 
+@mixin textSubtitle {
+  font-family: 'Nunito-SemiBold', sans-serif;
+  font-size: 1rem;
+}
+
 @mixin textNormal {
   font-family: 'Nunito-Regular', sans-serif;
   font-size: 1rem;
 }
 
 @mixin beauty {
-  background: rgb(255,103,148);
-  background: linear-gradient(120deg, rgba(255,103,148,1) 0%, rgba(252,146,182,1) 100%);
+  background: rgb(226,66,129);
+  background: linear-gradient(130deg, rgba(226,66,129,1) 0%, rgb(226, 89, 144) 100%);
   img{
     position: absolute;
-    bottom: -35px;
+    bottom: -40px;
     height: 150px;
     @media (min-width: 450px) and (max-width: 650px){
       bottom: -60px;
-      height: 175px;
+      height: 170px;
     }
   }
 }
@@ -35,13 +40,10 @@ $colorCategoryDesc: rgb(73, 73, 73);
   background: linear-gradient(240deg, rgba(243,80,0,1) 0%, rgba(255,132,41,1) 100%);
   img{
     position: absolute;
-    top: 50px;
-    right: -50px;
-    height: 300px;
+    bottom: 20px;
+    height: 230px;
     @media (min-width: 450px) and (max-width: 650px){
-      top: 40px;
-      right: 5px;
-      height: 300px;
+      height: 250px;
     }
   }
 }
@@ -51,13 +53,10 @@ $colorCategoryDesc: rgb(73, 73, 73);
   background: linear-gradient(120deg, rgba(255,226,0,1) 0%, rgba(255,239,110,1) 100%);
   img{
     position: absolute;
-    bottom: 10px;
-    right: -120px;
-    height: 100px;
+    bottom: 0;
+    width: 100%;
     @media (min-width: 450px) and (max-width: 650px){
-      bottom: 0px;
-      right: -100px;
-      height: 115px;
+
     }
   }
 }
@@ -67,25 +66,25 @@ $colorCategoryDesc: rgb(73, 73, 73);
   background: linear-gradient(120deg, rgba(0,180,90,1) 0%, rgba(88,209,150,1) 100%);
   img{
     position: absolute;
-    top: 25px;
-    height: 125px;
+    bottom: 0px;
+    right: 0px;
+    height: 150px;
     @media (min-width: 450px) and (max-width: 650px){
-      top: 5px;
-      height: 150px;
+
     }
   }
 }
 
 @mixin cloth {
-  background: rgb(147,28,160);
-  background: linear-gradient(170deg, rgba(147,28,160,1) 0%, rgba(204,55,216,1) 100%);
+  background: rgb(239,143,142);
+background: linear-gradient(130deg, rgba(239,143,142,1) 0%, rgba(242,144,141,1) 100%);
   img{
     position: absolute;
-    top: 50px;
-    height: 120px;
+    top: 35px;
+    height: 150px;
     @media (min-width: 450px) and (max-width: 650px){
-      top: 45px;
-      height: 150px;
+      top: 25px;
+      height: 175px;
     }
   }
 }
@@ -110,12 +109,9 @@ $colorCategoryDesc: rgb(73, 73, 73);
   background: linear-gradient(120deg, rgba(249,36,5,1) 0%, rgba(250,60,32,1) 100%);
   img{
     position: absolute;
-    bottom: -20px;
-    left: 40px;
-    height: 225px;
+    bottom: 0px;
+    height: 310px;
     @media (min-width: 450px) and (max-width: 650px){
-      left: 75px;
-      height: 250px;
     }
   }
 }
@@ -125,13 +121,10 @@ $colorCategoryDesc: rgb(73, 73, 73);
   background: linear-gradient(180deg, rgba(65,105,225,1) 0%, rgba(100,149,237,1) 100%);
   img{
     position: absolute;
-    bottom: 40px;
-    right: -100px;
-    height: 225px;
+    bottom: 20px;
+    height: 175px;
     @media (min-width: 450px) and (max-width: 650px){
-      bottom: 30px;
-      right: -35px;
-      height: 250px;
+      height: 225px;
     }
   }
 }
@@ -149,14 +142,17 @@ a{
 main{
   width: 100%;
 }
-
+.closed{
+  opacity: 0.5;
+}
 .categories{
     margin: 10px;
     &__button{
         position: relative;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         grid-row: span 1;
         grid-column: span 1;
         overflow: hidden;
@@ -164,11 +160,20 @@ main{
         border-radius: 15px;
         p{
             width: 100%;
+            width: calc(100% - 20px);
             color: white;
             margin: 0;
-            padding: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
             z-index: 50;
-            @include textHeader();
+        }
+        p:nth-child(1){
+          @include textHeader();
+          padding-top: 10px;
+        }
+        p:nth-child(2){
+          @include textSubtitle();
+          opacity: 0.75;
         }
         &::after{
           content: '';

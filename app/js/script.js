@@ -45,7 +45,7 @@ for (let i = 0; i < openButton.length; i++) {
 // Слайдер для историй
 let storyBlock = document.querySelectorAll(".storyBlock");
 let sliderStory = document.querySelectorAll(".storyBlock__content");
-let masterAvatar = document.querySelectorAll(".master__avatar");
+let masterAvatar = document.querySelectorAll(".storyOpen");
 let closeStory = document.querySelectorAll(".closeButton");
 let swipersliderStory = [];
 
