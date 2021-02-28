@@ -22,8 +22,8 @@ $colorCategoryDesc: rgb(73, 73, 73);
 }
 
 @mixin beauty {
-  background: rgb(226,66,129);
-  background: linear-gradient(130deg, rgba(226,66,129,1) 0%, rgb(226, 89, 144) 100%);
+  background: rgb(255,103,148);
+  background: linear-gradient(145deg, rgba(255,103,148,1) 0%, rgba(255,185,195,1) 100%);
   img{
     position: absolute;
     bottom: -40px;
@@ -37,7 +37,7 @@ $colorCategoryDesc: rgb(73, 73, 73);
 
 @mixin eat {
   background: rgb(243,80,0);
-  background: linear-gradient(240deg, rgba(243,80,0,1) 0%, rgba(255,132,41,1) 100%);
+  background: linear-gradient(175deg, rgba(243,80,0,1) 0%, rgba(255,132,41,1) 100%);
   img{
     position: absolute;
     bottom: 20px;
@@ -49,12 +49,12 @@ $colorCategoryDesc: rgb(73, 73, 73);
 }
 
 @mixin auto {
-  background: rgb(255,215,0);
-  background: linear-gradient(120deg, rgba(255,226,0,1) 0%, rgba(255,239,110,1) 100%);
+  background: rgb(255,203,51);
+  background: linear-gradient(150deg, rgba(255,203,51,1) 0%, rgba(255,239,110,1) 100%);
   img{
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: -10px;
+    height: 150px;
     @media (min-width: 450px) and (max-width: 650px){
 
     }
@@ -76,8 +76,8 @@ $colorCategoryDesc: rgb(73, 73, 73);
 }
 
 @mixin cloth {
-  background: rgb(239,143,142);
-background: linear-gradient(130deg, rgba(239,143,142,1) 0%, rgba(242,144,141,1) 100%);
+  background: rgb(214,112,225);
+  background: linear-gradient(175deg, rgba(214,112,225,1) 0%, rgba(224,151,233,1) 100%);
   img{
     position: absolute;
     top: 35px;
@@ -104,7 +104,7 @@ background: linear-gradient(130deg, rgba(239,143,142,1) 0%, rgba(242,144,141,1) 
   }
 }
 
-@mixin gift {
+@mixin holidays {
   background: rgb(249,36,5);
   background: linear-gradient(120deg, rgba(249,36,5,1) 0%, rgba(250,60,32,1) 100%);
   img{
@@ -217,8 +217,8 @@ main{
     &__training{
       @include training();
     }
-    &__gift{
-      @include gift();
+    &__holidays{
+      @include holidays();
     }
 }
 .mainCategories{
@@ -258,75 +258,43 @@ main{
   }
 }
 
-.categoryHome{
+.categoryHome,
+.categoryBeauty,
+.categoryEat,
+.categoryAuto,
+.categoryCloth,
+.categoryMotion,
+.categoryTraining,
+.categoryHolidays{
   position: absolute;
-  top: 10%;
-  right: -55px;
-  height: 70%;
-  width: 158px;
-  background-image: url('../img/main/house.svg');
+  bottom: 30px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
   background-repeat: no-repeat;
+  background-position: center;
+}
+.categoryHome{
+  background-image: url('../img/main/category/house.svg');
 }
 .categoryBeauty{
-  position: absolute;
-  top: 0;
-  right: -80px;
-  height: 90%;
-  width: 160px;
-  background-image: url('../img/main/beauty.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/beauty.svg');
 }
 .categoryEat{
-  position: absolute;
-  top: 0;
-  right: 0px;
-  height: 90%;
-  width: 60px;
-  background-image: url('../img/main/eat.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/eat.svg');
 }
 .categoryAuto{
-  position: absolute;
-  top: 0;
-  right: -180px;
-  height: 90%;
-  width: 295px;
-  background-image: url('../img/main/auto.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/auto.svg');
 }
 .categoryCloth{
-  position: absolute;
-  top: 0;
-  right: -45px;
-  height: 80%;
-  width: 138px;
-  background-image: url('../img/main/clothes.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/clothes.svg');
 }
 .categoryMotion{
-  position: absolute;
-  top: 0;
-  right: 0px;
-  height: 90%;
-  width: 90px;
-  background-image: url('../img/main/motion.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/motion.svg');
 }
 .categoryTraining{
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 80%;
-  width: 87px;
-  background-image: url('../img/main/study.svg');
-  background-repeat: no-repeat;
+  background-image: url('../img/main/category/study.svg');
 }
-.categoryGift{
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 80%;
-  width: 87px;
-  background-image: url('../img/main/gift.svg');
-  background-repeat: no-repeat;
+.categoryHolidays{
+  background-image: url('../img/main/category/holidays.svg');
 }

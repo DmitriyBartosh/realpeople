@@ -22,7 +22,10 @@ html(lang="ru")
             .master__block
               .story
               a(href="#").master__avatar.storyOpen
-                img(src="../img/beauty/freelance/manicure/avatar/1.jpg", alt="")
+                picture
+                  source(srcset="../webp/beauty/freelance/manicure/avatar/1.webp", type="image/webp")
+                  source(srcset="../img/beauty/freelance/manicure/avatar/1.jpg", type="image/jpeg")
+                  img(src="../img/beauty/freelance/manicure/avatar/1.jpg", alt="")
               .master__info
                 h3 Катя Фролова
                 p ул. Урванцева, 16
@@ -57,3 +60,4 @@ html(lang="ru")
             p REAL
       
       script(src="../js/bundle.js")
+      script(src="../js/webp.js")

@@ -22,7 +22,10 @@ html(lang="ru")
             .master__block
               .story
               a(href="#").master__avatar.storyOpen
-                img(src="../img/beauty/freelance/eyebrow/avatar/1.jpg", alt="")
+                picture
+                  source(srcset="../webp/beauty/freelance/eyebrow/avatar/1.webp", type="image/webp")
+                  source(srcset="../img/beauty/freelance/eyebrow/avatar/1.jpg", type="image/jpeg")
+                  img(src="../img/beauty/freelance/eyebrow/avatar/1.jpg", alt="")
               .master__info
                 h3 Екатерина<br>THIS IS MY LASHES
                 p ул. Карла Маркса 95/к1<br>БЦ "Евразия" оф 304А

@@ -112,6 +112,9 @@ $storyColor: white;
           margin: 0px;
           line-height: 16px;
         }
+        .noBack{
+          opacity: 0;
+        }
       }
       .small{
         display: flex;
@@ -121,11 +124,14 @@ $storyColor: white;
         grid-column: span 1;
         background-color: #444444;
         img{
-          width: 18px;
+          width: 20px;
         }
         p{
           margin: 0px;
           line-height: 16px;
+        }
+        .noBack{
+          opacity: 0;
         }
       }
       .wide{
@@ -143,6 +149,9 @@ $storyColor: white;
           line-height: 16px;
         }
       }
+      .noBack{
+        background-color: transparent;
+      }
     }
 
     &__avatar{
@@ -159,9 +168,8 @@ $storyColor: white;
       margin-bottom: 5px;
       margin-right: 20px;
       z-index: 10;
-      img{
+      img, picture{
         display: block;
-        position: absolute;
         width: 100%;
       }
     }
@@ -193,7 +201,7 @@ $storyColor: white;
         width: 100%;
         height: 73px;
         border-radius: 15px;
-        img{
+        img, picture{
           width: 25px;
           height: 25px;
           transition: transform .3s;
@@ -255,13 +263,10 @@ $storyColor: white;
       margin-right: 20px;
       border-radius: 50%;
       overflow: hidden;
-      img{
+      img, picture{
         position: relative;
         width: 100%;
       }
-    }
-    img{
-      height: 60px;
     }
     h3{
       @include textLink();
@@ -294,8 +299,8 @@ $storyColor: white;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        img{
-          max-height: 100%;
+        img, picture{
+          height: 100%;
           object-fit: contain;
         }
       }

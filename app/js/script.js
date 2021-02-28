@@ -29,8 +29,8 @@ for (let i = 0; i < openButton.length; i++) {
   var openNavTl = gsap.timeline({paused: true, reversed: true});
 
   openNavTl
-    .to(linksMaster[i], {height: 108, duration: 0.3})
-    .from(links[i], {opacity: 0, scale: 0.9, ease: "circ.out", stagger: {from: "end", amount: 0.3}}, '-=0.3');
+    .to(linksMaster[i], {height: 108, duration: 0.20})
+    .from(links[i], {opacity: 0, scale: 0.9, stagger: {from: "random", amount: 0.2, ease: "circ.out"}}, '-=0.1');
 
   linksMaster[i].anim = openNavTl;
 

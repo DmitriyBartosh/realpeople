@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Фото и видео | Реальные Люди
+        link(rel="stylesheet", href="../css/style.min.css")
+        link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
+        link(rel="shortcut icon", href="../img/logo/icon256.png")
+    body
+      main
+        include ../../layout/holidays/story/photo.pug
+        include ../../layout/holidays/price/photo.pug
+
+        .serviceHeader.promoPhoto
+          .serviceHeader__info
+            h2 Фото и видео
+            p Выберите специалиста
+
+        .listMasters
+          .master
+            .master__block
+              .story
+              a.master__avatar.storyOpen
+                picture
+                  source(srcset="../webp/holidays/freelance/photo/avatar/1.webp", type="image/webp")
+                  source(srcset="../img/holidays/freelance/photo/avatar/1.JPG", type="image/jpeg")
+                  img(src="../img/holidays/freelance/photo/avatar/1.JPG", alt="")
+              .master__info
+                h3 Натали
+                p Фотограф
+              .master__link
+                a.master__link__openNavButton
+                  img(src="../img/icon/add.svg", alt="")
+
+            .master__nav
+              a.master__nav__button.long.price
+                img(src="../img/icon/ruble.svg", alt="")
+                p Цены
+              a.master__nav__button.small
+              a(href="https://www.instagram.com/natalie_st_photo/" target="_blank").master__nav__button.wide
+                img(src="../img/icon/instagram.svg", alt="")
+                p Instagram
+              a.master__nav__button.small
+              a(href="https://wa.me/+79057558010").master__nav__button.wide
+                img(src="../img/icon/whatsapp.svg", alt="")
+                p Написать
+              a.master__nav__button.small
+              a.master__nav__button.small
+
+
+          .master
+            .master__block
+              .story
+              a.master__avatar.storyOpen
+                picture
+                  source(srcset="../webp/holidays/freelance/photo/avatar/2.webp", type="image/webp")
+                  source(srcset="../img/holidays/freelance/photo/avatar/2.jpg", type="image/jpeg")
+                  img(src="../img/holidays/freelance/photo/avatar/2.jpg", alt="")
+              .master__info
+                h3 Ярославцева Александра
+                p Фотограф
+              .master__link
+                a.master__link__openNavButton
+                  img(src="../img/icon/add.svg", alt="")
+
+            .master__nav
+              a.master__nav__button.long.price
+                img(src="../img/icon/ruble.svg", alt="")
+                p Цены
+              a.master__nav__button.small
+              a(href="https://www.instagram.com/yaroslavtsevasasha/" target="_blank").master__nav__button.wide
+                img(src="../img/icon/instagram.svg", alt="")
+                p Instagram
+              a.master__nav__button.small
+              a(href="https://viber.click/+79130365079").master__nav__button.wide
+                img(src="../img/icon/viber.svg", alt="")
+                p Написать
+              a(href="https://wa.me/+79130365079").master__nav__button.wide
+                img(src="../img/icon/whatsapp.svg", alt="")
+                p Написать
+
+      nav.serviceNav
+        .serviceNav__back
+          a(href="/realpeople/app/holidays.html")
+            img(src="../img/icon/backspace.svg", alt="")
+        .serviceNav__category 
+          a(href="/realpeople/app/holidays.html") 
+            p Категория | Праздники
+        .serviceNav__home
+          a(href="/realpeople/app/")
+            p REAL
+      
+      script(src="../js/bundle.js")

@@ -8,9 +8,9 @@ const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const del = require('del');
 const pug = require('gulp-pug');
-const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const { notify } = require('browser-sync');
 
@@ -29,13 +29,18 @@ function cleanDist() {
     return del('dist')
 }
 
+// Удаление папки с изображениями
+function cleanImg() {
+  return del(['app/img/**', '!app/img/logo', 'app/webp/**'])
+}
+
 // Минификация изображений
 function images() {
-    return src('app/img/**/*')
+    return src('app/imageoriginal/**/*')
     .pipe(imagemin(
         [
             imagemin.gifsicle({interlaced: true}),
-            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.mozjpeg({quality: 85, progressive: true}),
             imagemin.optipng({optimizationLevel: 5}),
             imagemin.svgo({
                 plugins: [
@@ -45,7 +50,18 @@ function images() {
             })
         ]
     ))
-    .pipe(dest('dist/img'))
+    .pipe(dest('app/img'))
+}
+
+// Webp
+function webpImg() {
+  return src('app/imageoriginal/**/*')
+  .pipe(webp({
+    quality: 85,
+    preset: 'photo',
+    method: 6
+  }))
+  .pipe(dest('app/webp'))
 }
 
 // Сборка html страниц
@@ -59,7 +75,7 @@ function htmlPages() {
 }
 
 // Оптимизация скриптов
-const jsFiles = ['app/js/script.js'];
+const jsFiles = ['app/js/script.js', 'app/js/webp.js'];
 function scripts(){
     return src(jsFiles)
     .pipe(webpackStream({
@@ -119,7 +135,8 @@ function build() {
         'app/css/style.min.css',
         'app/fonts/**/*',
         'app/js/main.min.js',
-        'app/*.html'
+        'app/*.html',
+        'app/img/**/*'
     ], {base: 'app'})
     .pipe(dest('dist'))
 }
@@ -138,9 +155,13 @@ exports.browsersync = browsersync;
 exports.scripts = scripts;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.cleanImg = cleanImg;
 exports.htmlPages = htmlPages;
+exports.webpImg = webpImg;
 
 // Сборка проекта (команда build)
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanDist, build);
+// Сборка изображений
+exports.image = series(cleanImg, images, webpImg);
 // Запуск обновление стилей, скриптов, синхронизация браузара и слежение за изменениями(команда gulp)
 exports.default = parallel(htmlPages, styles, scripts, browsersync, watching); 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="google" content="notranslate")
+        title Подарки | Реальные люди
+        link(rel="stylesheet", href="css/style.min.css")
+        link(rel="shortcut icon", href="/img/logo/icon32.png", type="image/x-icon")
+        link(rel="shortcut icon", href="/img/logo/icon256.png")
+    body
+      main
+        .categoryHeader
+          h2 Подарки
+          p Выберите магазин или услугу
+          .categoryHolidays
+        .categories.categoriesHolidays
+          a(href="holidays/gift.html").categories__button.small
+            p Подарки
+            img(src="img/holidays/block/gift.svg", alt="")
+          a(href="").categories__button.long
+            p Организаия мероприятий
+            img(src="img/holidays/block/events.svg", alt="")
+          a(href="").categories__button.long
+            p Артисты
+            img(src="img/holidays/block/artists.svg", alt="")
+          a(href="holidays/photo.html").categories__button.small
+            p Фото/Видео
+            img(src="img/holidays/block/photo.svg", alt="")
+          a(href="").categories__button.wide
+            p Ведущие/Диджеи
+            img(src="img/holidays/block/DJ.svg", alt="")
+
+      nav.categoryNav
+        .categoryNav__back
+          a(href="/realpeople/app/")
+            img(src="img/icon/backspace.svg", alt="")
+        .categoryNav__link
+          .categoryNav__container
+            .swiper-wrapper
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+              a(href="").swiper-slide Подкатегория
+      
+      script(src="js/bundle.js")

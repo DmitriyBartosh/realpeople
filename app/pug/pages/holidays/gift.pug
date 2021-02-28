@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Подарки | Реальные Люди
+        link(rel="stylesheet", href="../css/style.min.css")
+        link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
+        link(rel="shortcut icon", href="../img/logo/icon256.png")
+    body
+      main
+        include ../../layout/holidays/story/photo.pug
+        include ../../layout/holidays/price/photo.pug
+
+        .serviceHeader.promoGift
+          .serviceHeader__info
+            h2 Подарки
+            p Выберите специалиста
+
+        .listMasters
+          .master
+            .master__block
+              .story
+              a(href="#").master__avatar.storyOpen
+                picture
+                  source(srcset="../webp/holidays/freelance/gift/avatar/1.webp", type="image/webp")
+                  source(srcset="../img/holidays/freelance/gift/avatar/1.jpg", type="image/jpeg")
+                  img(src="../img/holidays/freelance/gift/avatar/1.jpg", alt="")
+              .master__info
+                h3 Wowmilota
+                p Декор из дерева
+              .master__link
+                a.master__link__openNavButton
+                  img(src="../img/icon/add.svg", alt="")
+
+            .master__nav
+              a.master__nav__button.long.price
+                img(src="../img/icon/ruble.svg", alt="")
+                p Цены
+              a.master__nav__button.wide.noBack
+              a(href="https://www.instagram.com/wowmilota.ru/" target="_blank").master__nav__button.wide
+                img(src="../img/icon/instagram.svg", alt="")
+                p Instagram
+              a.master__nav__button.small.noBack
+              a(href="tel:+79029111546").master__nav__button.wide
+                img(src="../img/icon/phone.svg", alt="")
+                p Позвонить
+              a.master__nav__button.small.noBack
+
+
+          .master
+            .master__block
+              .story
+              a(href="#").master__avatar.storyOpen
+                picture
+                  source(srcset="../webp/holidays/freelance/gift/avatar/2.webp", type="image/webp")
+                  source(srcset="../img/holidays/freelance/gift/avatar/2.jpg", type="image/jpeg")
+                  img(src="../img/holidays/freelance/gift/avatar/2.jpg", alt="")
+              .master__info
+                h3 Nuts and More
+                p Круглые коробочки с орехами и цукатами
+              .master__link
+                a.master__link__openNavButton
+                  img(src="../img/icon/add.svg", alt="")
+
+            .master__nav
+              a(href="#").master__nav__button.long.price
+                img(src="../img/icon/ruble.svg", alt="")
+                p Цены
+              a(href="https://tlgg.ru/9029128748").master__nav__button.small
+                img(src="../img/icon/telegram.svg", alt="")
+              a(href="https://viber.click/+79029128748").master__nav__button.small
+                img(src="../img/icon/viber.svg", alt="")
+              a(href="https://wa.me/+79029128748").master__nav__button.small
+                img(src="../img/icon/whatsapp.svg", alt="")
+              a.master__nav__button.small.noBack
+              a.master__nav__button.wide.noBack
+              a(href="https://www.instagram.com/nutsandmore.krsk/" target="_blank").master__nav__button.wide
+                img(src="../img/icon/instagram.svg", alt="")
+                p Instagram
+
+      nav.serviceNav
+        .serviceNav__back
+          a(href="/realpeople/app/holidays.html")
+            img(src="../img/icon/backspace.svg", alt="")
+        .serviceNav__category 
+          a(href="/realpeople/app/holidays.html") 
+            p Категория | Праздники
+        .serviceNav__home
+          a(href="/realpeople/app/")
+            p REAL
+      
+      script(src="../js/bundle.js")
