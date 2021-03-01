@@ -58,6 +58,12 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  .promoDj{
+    background-image: url(../img/holidays/freelance/DJ/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 // Стили для браузеров поддерживающие webp
@@ -116,6 +122,12 @@
   }
   .promoGift{
     background-image: url(../webp/holidays/freelance/gift/background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .promoDj{
+    background-image: url(../webp/holidays/freelance/DJ/background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
