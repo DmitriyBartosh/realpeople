@@ -57,8 +57,6 @@ if(sliderStory){
 
     var swiperContainer = document.querySelector('#storyContent_' + [i]);
     swipersliderStory[i] = new Swiper(swiperContainer, {
-      preloadImages: false,
-      lazy: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
