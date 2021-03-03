@@ -1,0 +1,32 @@
+//- 1 блок
+.storyBlock
+  .storyBlock__header 
+    .avatar
+      picture
+        source(srcset="", type="image/webp")
+        source(srcset="", type="image/jpeg")
+        img(src="", alt="")
+    h3 Имя
+
+  .storyBlock__content
+    .swiper-wrapper
+      .swiper-slide
+        picture
+          source(srcset="", type="image/webp")
+          source(srcset="", type="image/jpeg")
+          img(src="", alt="")
+
+      
+    .swiper-pagination 
+
+    .swiper-button-next 
+    .swiper-button-prev
+
+  nav.storyNav
+    .storyNav__back
+      a(href="#").closeButton
+        img(src="../img/icon/backspace.svg", alt="")
+    .storyNav__callback
+      a(href="https://wa.me/") 
+        img(src="../img/icon/whatsapp.svg", alt="")
+        p Написать

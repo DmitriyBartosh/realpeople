@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Название | Реальные Люди
+        link(rel="stylesheet", href="../css/style.min.css")
+        link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
+        link(rel="shortcut icon", href="../img/logo/icon256.png")
+    body
+      main
+        include ../../layout/eat/story/
+        include ../../layout/eat/price/
+
+        .serviceHeader.promoUsadbaHall
+          .serviceHeader__info
+            h2 Название
+            p Дескрипшн
+
+        .serviceContent 
+          .serviceContent__mainAction 
+            a(href="" target="_blank") Сайт
+            a(href="tel:") Позвонить
+          
+          .serviceContent__navigation
+            a(href="https://wa.me/").small 
+              img(src="../img/icon/whatsapp.svg", alt="")
+            a.wide.storyOpen
+              img(src="../img/icon/gallary.svg", alt="")
+              p О нас
+            a(href="https://www.instagram.com/" target="_blank").long
+              img(src="../img/icon/instagram.svg", alt="")
+              p Instagram
+            a(href="https://viber.click/").small
+              img(src="../img/icon/viber.svg", alt="")
+            a.small.price
+              p Цены
+            a(href="https://yandex.ru/maps/-/CCUQeJVm~B" target="_blank").small
+              img(src="../img/icon/place.svg", alt="")
+          
+          .serviceContent__popularProduct
+            .swiper-wrapper.productContainer
+              a(href="" target="_blank").swiper-slide.productBlock
+                p Название блока
+
+        nav.serviceNav
+          .serviceNav__back
+            a(href="/realpeople/app/eat.html")
+              img(src="../img/icon/backspace.svg", alt="")
+          .serviceNav__category 
+            a(href="/realpeople/app/ ") 
+              p Категория | Название категории
+          .serviceNav__home
+            a(href="/realpeople/app/")
+              p REAL
+              
+      
+      script(src="../js/bundle.js")

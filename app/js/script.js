@@ -79,13 +79,62 @@ if(sliderStory){
     masterAvatar[i].addEventListener('click', function(e){
       e.preventDefault();
       storyBlock[i].anim.play();
+
+      var video = storyBlock[i].querySelector('video');
+
+      if(video){
+        if(swipersliderStory[i].activeIndex == 0){
+          video.play();
+        }
+        swipersliderStory[i].on('realIndexChange', function() {
+          if(swipersliderStory[i].activeIndex == 0){
+            video.play();
+          }
+          else{
+            video.pause();
+            video.currentTime = 0;
+          }
+         });
+      }
     })
 
     closeStory[i].addEventListener('click', function(e){
       e.preventDefault();
       storyBlock[i].anim.reverse();
+
+      var video = storyBlock[i].querySelector('video');
+
+      if(video){
+        if(swipersliderStory[i].activeIndex == 0){
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
     })
   }
+
+  // Звук на историях
+  let sound = document.querySelectorAll('.sound');
+  let allVideo = document.querySelectorAll('video');
+
+  for(let i = 0; i < sound.length; i++){
+    sound[i].addEventListener('click', function(e){
+      e.preventDefault();
+
+      if(this.classList.contains('off')){
+        for(let i = 0; i < sound.length; i++){
+          sound[i].classList.toggle('off');
+          allVideo[i].muted = false;
+        }
+      }
+      else{
+        for(let i = 0; i < sound.length; i++){
+          sound[i].classList.toggle('off');
+          allVideo[i].muted = true;
+        }
+      }
+      
+    })}
 }
 
 // Открыть Цена
@@ -127,6 +176,9 @@ const swiperPopularProduct = new Swiper(sliderPopularProduct, {
   grabCursor: true,
 })
 }
+
+// Видео в стори
+
 
 // Добавить слайдер для Подкатегорий
 let sliderCategoryNav = document.querySelector('.categoryNav__container');

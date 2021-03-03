@@ -64,6 +64,12 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  .promoEvent{
+    background-image: url(../img/holidays/service/events/background.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 // Стили для браузеров поддерживающие webp
@@ -128,6 +134,12 @@
   }
   .promoDj{
     background-image: url(../webp/holidays/freelance/DJ/background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .promoEvent{
+    background-image: url(../webp/holidays/service/events/background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
