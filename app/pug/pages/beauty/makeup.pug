@@ -4,9 +4,11 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Макияж и прически | Реальные Люди
-        link(rel="stylesheet", href="../css/style.min.css")
+        link(rel="stylesheet", href="../css/style.min.css", async)
         link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
         link(rel="shortcut icon", href="../img/logo/icon256.png")
+
+        link(rel="preload", as="image", href="../webp/beauty/freelance/makeup/background.webp")
     body
       main
         include ../../layout/beauty/story/makeup.pug
@@ -28,7 +30,7 @@ html(lang="ru")
                   img(src="../img/beauty/freelance/makeup/avatar/1.jpeg", alt="")
               .master__info
                 h3 Вероника Куц
-                p Выезд на дом
+                p Макияж и прически
               .master__link
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
@@ -37,17 +39,18 @@ html(lang="ru")
               a(href="#").master__nav__button.long.price
                 img(src="../img/icon/ruble.svg", alt="")
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/kuts_beauty/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a(href="tel:+79131988200" target="_blank").master__nav__button.small
+              a(href="tel:+79131988200" target="_blank").master__nav__button.wide
                 img(src="../img/icon/phone.svg", alt="")
-              a.master__nav__button.wide.noBack
-              a(href="https://wa.me/+79131988200" target="_blank").master__nav__button.small
+                p Позвонить
+              a(href="https://wa.me/+79131988200" target="_blank").master__nav__button.wide
                 img(src="../img/icon/whatsapp.svg", alt="")
-              a(href="https://viber.click/+79131988200" target="_blank").master__nav__button.small
+                p Whatsapp
+              a(href="https://viber.click/+79131988200" target="_blank").master__nav__button.wide
                 img(src="../img/icon/viber.svg", alt="")
+                p Viber
 
           .master
             .master__block
@@ -59,7 +62,7 @@ html(lang="ru")
                   img(src="../img/beauty/freelance/makeup/avatar/2.jpg", alt="")
               .master__info
                 h3 Ксения Подрезова
-                p ул. Батурина 5, салон Абгрейд
+                p Окрашивание волос
               .master__link 
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
@@ -68,18 +71,18 @@ html(lang="ru")
               a(href="#").master__nav__button.long.price
                 img(src="../img/icon/ruble.svg", alt="")
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/podrezova_kseniya/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a(href="tel:+79632583162" target="_blank").master__nav__button.small
+              a(href="tel:+79632583162" target="_blank").master__nav__button.wide
                 img(src="../img/icon/phone.svg", alt="")
+                p Позвонить
               a(href="https://yandex.ru/maps/-/CCUQYKUhDA" target="_blank").master__nav__button.wide
                 img(src="../img/icon/place.svg", alt="")
                 p Карта
-              a(href="https://wa.me/+79632583162" target="_blank").master__nav__button.small
+              a(href="https://wa.me/+79632583162" target="_blank").master__nav__button.wide
                 img(src="../img/icon/whatsapp.svg", alt="")
-              a.master__nav__button.small.noBack
+                p Whatsapp
 
 
           .master
@@ -92,7 +95,7 @@ html(lang="ru")
                   img(src="../img/beauty/freelance/makeup/avatar/3.jpg", alt="")
               .master__info
                 h3 Тамара Куршакова
-                p ул. Кирова, 37
+                p Макияж, прически<br>и velvet ресницы
               .master__link
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
@@ -101,18 +104,18 @@ html(lang="ru")
               a(href="#").master__nav__button.long.price
                 img(src="../img/icon/ruble.svg", alt="")
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/tom_kur/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a(href="tel:+79233316070" target="_blank").master__nav__button.small
+              a(href="tel:+79233316070" target="_blank").master__nav__button.wide
                 img(src="../img/icon/phone.svg", alt="")
+                p Позвонить
               a(href="https://yandex.ru/maps/-/CCUQYKUPtA" target="_blank").master__nav__button.wide
                 img(src="../img/icon/place.svg", alt="")
                 p Карта
-              a(href="https://wa.me/+79233316070" target="_blank").master__nav__button.small
+              a(href="https://wa.me/+79233316070" target="_blank").master__nav__button.wide
                 img(src="../img/icon/whatsapp.svg", alt="")
-              a.master__nav__button.small.noBack
+                p Whatsapp
 
           .master
             .master__block
@@ -124,34 +127,30 @@ html(lang="ru")
                   img(src="../img/beauty/freelance/makeup/avatar/4.JPG", alt="")
               .master__info
                 h3 Елена Гусева
-                p Красноярск
+                p Стилист
               .master__link 
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
 
             .master__nav
-              a(href="#").master__nav__button.long.price
-                img(src="../img/icon/ruble.svg", alt="")
+              a(href="#").master__nav__button.small.price
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/_lena_veris/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a(href="tel:+79233452567" target="_blank").master__nav__button.small
+              a(href="tel:+79233452567" target="_blank").master__nav__button.wide
                 img(src="../img/icon/phone.svg", alt="")
-              a.master__nav__button.wide.noBack
-              a.master__nav__button.small.noBack
-              a.master__nav__button.small.noBack
+                p Позвонить
 
-      nav.serviceNav
-        .serviceNav__back
-          a(href="/realpeople/app/beauty.html")
-            img(src="../img/icon/backspace.svg", alt="")
-        .serviceNav__category 
-          a(href="/realpeople/app/beauty.html") 
-            p Категория | Красота
-        .serviceNav__home
-          a(href="/realpeople/app/")
-            p REAL
+        nav.serviceNav
+          .serviceNav__back
+            a(href="/realpeople/app/beauty.html")
+              img(src="../img/icon/backspace.svg", alt="")
+          .serviceNav__category 
+            a(href="/realpeople/app/beauty.html") 
+              p Категория | Красота
+          .serviceNav__home
+            a(href="/realpeople/app/")
+              p REAL
       
       script(src="../js/bundle.js")

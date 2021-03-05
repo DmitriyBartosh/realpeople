@@ -7,6 +7,8 @@ html(lang="ru")
         link(rel="stylesheet", href="../css/style.min.css")
         link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
         link(rel="shortcut icon", href="../img/logo/icon256.png")
+
+        link(rel="preload", as="image", href="../webp/holidays/freelance/DJ/background.webp")
     body
       main
         include ../../layout/holidays/story/DJ.pug
@@ -34,29 +36,25 @@ html(lang="ru")
                   img(src="../img/icon/add.svg", alt="")
 
             .master__nav
-              a.master__nav__button.long.price
-                img(src="../img/icon/ruble.svg", alt="")
+              a.master__nav__button.small.price
                 p Цены
-              a.master__nav__button.wide.noBack
               a(href="https://www.instagram.com/duet_2antona/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
               a(href="https://m.vk.com/id196852570" target="_blank").master__nav__button.small
                 img(src="../img/icon/vk.svg", alt="")
-              a(href="https://wa.me/+79232868625").master__nav__button.wide
+              a(href="https://wa.me/+79232868625").master__nav__button.small
                 img(src="../img/icon/whatsapp.svg", alt="")
-                p Написать
-              a.master__nav__button.small.noBack
 
-      nav.serviceNav
-        .serviceNav__back
-          a(href="/realpeople/app/holidays.html")
-            img(src="../img/icon/backspace.svg", alt="")
-        .serviceNav__category 
-          a(href="/realpeople/app/holidays.html") 
-            p Категория | Праздники
-        .serviceNav__home
-          a(href="/realpeople/app/")
-            p REAL
+        nav.serviceNav
+          .serviceNav__back
+            a(href="/realpeople/app/holidays.html")
+              img(src="../img/icon/backspace.svg", alt="")
+          .serviceNav__category 
+            a(href="/realpeople/app/holidays.html") 
+              p Категория | Праздники
+          .serviceNav__home
+            a(href="/realpeople/app/")
+              p REAL
       
       script(src="../js/bundle.js")

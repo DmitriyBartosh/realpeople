@@ -1,40 +1,73 @@
+@mixin small {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+@mixin wide {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+@mixin long {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
 // Стили для блоков Красота
 @mixin makeUp {
   background-color: #ffb9c3;
+  @include long();
   img{
     bottom: 0;
     right: 0;
     height: 200px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin cosmetic {
   background-color: #fc92b6;
+  @include long();
   img{
     bottom: 0;
     height: 225px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin eyelashes {
   background-color: #ff6794;
+  @include small();
   img{
     bottom: 0;
     right: 0;
     height: 110px;
+    @media (min-width: 751px){
+      height: 240px;
+    }
   }
 }
 @mixin manicure {
   background-color: #ff9dae;
+  @include small();
   img{
     bottom: 0;
     right: 0;
     height: 110px;
+    @media (min-width: 751px){
+      height: 225px;
+    }
   }
 }
 @mixin massage {
   background-color: #ffc5d6;
+  @include wide();
   img{
     right: 0;
     height: 130px;
+    @media (min-width: 751px){
+      height: 300px;
+    }
   }
 }
 
@@ -46,6 +79,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -69,39 +106,60 @@
 // Стили для блоков Дом
 @mixin ceilings {
   background-color: #00b45a;
+  @include wide();
   img{
     bottom: 0;
     right: 0;
     height: 140px;
+    @media (min-width: 751px){
+      height: 250px;
+    }
   }
 }
 @mixin cleaning {
   background-color: #00c377;
+  @include long();
   img{
     bottom: 50px;
     left: 0;
     height: 180px;
+    @media (min-width: 751px){
+      height: 300px;
+    }
   }
 }
 @mixin electronics {
   background-color: #58d196;
+  @include small();
   img{
     bottom: 10px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 200px;
+    }
   }
 }
 @mixin interior {
   background-color: #a6e5c3;
+  @include long();
   img{
     bottom: 10px;
     height: 150px;
+    @media (min-width: 751px){
+      bottom: 50px;
+      height: 300px;
+    }
   }
 }
 @mixin repairs {
   background-color: #88e5af;
+  @include small();
   img{
     bottom: 10px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 200px;
+    }
   }
 }
 
@@ -113,6 +171,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -136,39 +198,60 @@
 // Стили для блоков Еда
 @mixin products {
   background-color: #ffac33;
+  @include small();
   img{
     bottom: 0px;
     height: 115px;
+    @media (min-width: 751px){
+      height: 225px;
+    }
   }
 }
 @mixin fastfood {
   background-color: #f35000;
+  @include long();
   img{
     top: 30px;
     right: 0px;
     height: 250px;
+    @media (min-width: 751px){
+      top: 50px;
+      height: 400px;
+    }
   }
 }
 @mixin catering {
   background-color: #fda157;
+  @include long();
   img{
     left: 0px;
     bottom: 0px;
     height: 200px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin sweets {
   background-color: #ff8429;
+  @include small();
   img{
     bottom: 10px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 215px;
+    }
   }
 }
 @mixin burgers {
   background-color: #e56d00;
+  @include wide();
   img{
     bottom: 0px;
     height: 125px;
+    @media (min-width: 751px){
+      height: 225px;
+    }
   }
 }
 
@@ -180,6 +263,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -203,40 +290,63 @@
 // Стили для блоков Авто
 @mixin repairs {
   background-color: #ffe406;
+  @include small();
   img{
     bottom: 0px;
     left: 20px;
     height: 90px;
+    @media (min-width: 751px){
+      height: 215px;
+    }
   }
 }
 @mixin service {
   background-color: #ffef6e;
+  @include long();
   img{
     bottom: 30px;
     left: 25px;
     height: 200px;
+    @media (min-width: 751px){
+      bottom: 80px;
+      height: 250px;
+    }
   }
 }
 @mixin rent {
   background-color: #ffe473;
+  @include long();
   img{
     left: 10px;
     top: 75px;
     height: 150px;
+    @media (min-width: 751px){
+      top: 100px;
+      height: 250px;
+    }
   }
 }
 @mixin drycleaning {
   background-color: #ffcb33;
+  @include small();
   img{
     bottom: 0px;
     height: 110px;
+    @media (min-width: 751px){
+      height: 215px;
+    }
   }
 }
 @mixin audio {
   background-color: #ffe200;
+  @include wide();
   img{
     bottom: 10px;
     height: 90px;
+    @media (min-width: 751px){
+      bottom: 30px;
+      height: 180px;
+    }
   }
 }
 
@@ -248,6 +358,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -271,39 +385,61 @@
 // Стили для блоков Одежда
 @mixin accessories {
   background-color: #931ca0;
+  @include small();
   img{
     bottom: 10px;
     height: 90px;
+    @media (min-width: 751px){
+      height: 200px;
+    }
   }
 }
 @mixin clothes {
   background-color: #d670e1;
+  @include long();
   img{
     bottom: 0px;
     left: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin shoes {
   background-color: #e097e9;
+  @include long();
   img{
     bottom: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin bag {
   background-color: #e8b4ef;
+  @include small();
   img{
-    bottom: -20px;
+    bottom: 5px;
     height: 125px;
+    @media (min-width: 751px){
+      bottom: 10px;
+      height: 225px;
+    }
   }
 }
 @mixin womenclothes {
   background-color: #cc37d8;
+  @include wide();
   img{
     bottom: 0px;
     right: 20px;
     height: 115px;
+    @media (min-width: 751px){
+      right: 75px;
+      height: 225px;
+    }
   }
 }
 
@@ -315,6 +451,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -335,40 +475,60 @@
   }
 }
 
-// Стили для блоков Подарки
+// Стили для блоков Праздники
 @mixin gift {
   background-color: #f50000;
+  @include small();
   img{
     bottom: 0px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 200px;
+    }
   }
 }
 @mixin events {
   background-color: #b30000;
+  @include long();
   img{
     bottom: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 350px;
+    }
   }
 }
 @mixin artists {
   background-color: #fa3c20;
+  @include long();
   img{
     bottom: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 400px;
+    }
   }
 }
 @mixin photo {
   background-color: #950000;
+  @include small();
   img{
     bottom: -20px;
     height: 125px;
+    @media (min-width: 751px){
+      height: 250px;
+    }
   }
 }
 @mixin DJ {
   background-color: #f92405;
+  @include wide();
   img{
-    bottom: 0px;
-    height: 90px;
+    bottom: 10px;
+    width: 103%;
+    @media (min-width: 751px){
+      width: 100%;
+    }
   }
 }
 
@@ -380,6 +540,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -403,40 +567,61 @@
 // Стили для блоков Обучение
 @mixin tutor {
   background-color: #92d5f6;
+  @include small();
   img{
     bottom: 0px;
     right: 0px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 175px;
+    }
   }
 }
 @mixin courses {
   background-color: #42adea;
+  @include long();
   img{
     bottom: 0px;
     right: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 350px;
+    }
   }
 }
 @mixin сhildreneducation {
   background-color: #66d0f4;
+  @include long();
   img{
     bottom: 0px;
     height: 225px;
+    @media (min-width: 751px){
+      height: 300px;
+    }
   }
 }
 @mixin selfdevelopment {
   background-color: #71caf4;
+  @include small();
   img{
     bottom: -20px;
     height: 125px;
+    @media (min-width: 751px){
+      height: 225px;
+    }
   }
 }
 @mixin browistcourses {
   background-color: #2576bf;
+  @include wide();
   img{
     bottom: 0px;
     right: 0px;
     height: 125px;
+    @media (min-width: 751px){
+      right: 70px;
+      height: 250px;
+    }
   }
 }
 
@@ -448,6 +633,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }
@@ -471,20 +660,27 @@
 // Стили для блоков Движение
 @mixin sport {
   background-color: #00acbd;
+  @include small();
   img{
     bottom: 0px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 225px;
+    }
   }
 }
 @mixin relaxation {
   background-color: #3fa5b0;
+  @include long();
   img{
     bottom: 0px;
     width: 100%;
+    
   }
 }
 @mixin activity {
   background-color: #2b747c;
+  @include long();
   img{
     bottom: 0px;
     width: 100%;
@@ -492,16 +688,24 @@
 }
 @mixin tours {
   background-color: #2b747c;
+  @include small();
   img{
     bottom: 10px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 215px;
+    }
   }
 }
 @mixin sportinggoods {
   background-color: #55afb7;
+  @include wide();
   img{
     bottom: 0px;
     height: 100px;
+    @media (min-width: 751px){
+      height: 200px;
+    }
   }
 }
 
@@ -513,6 +717,10 @@
   row-gap: 10px;
   column-gap: 10px;
   margin-bottom: 60px;
+  @media (min-width: 751px){
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
   a img{
     position: absolute;
   }

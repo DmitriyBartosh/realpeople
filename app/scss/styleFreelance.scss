@@ -306,6 +306,9 @@ $storyColor: white;
           object-fit: contain;
           object-position: center center;
         }
+        video{
+          z-index: 110;
+        }
         .sound{
           position: absolute;
           display: flex;

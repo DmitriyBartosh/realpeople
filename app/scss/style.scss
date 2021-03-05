@@ -1,6 +1,19 @@
 $colorCategoryHeader: rgb(0, 0, 0);
 $colorCategoryDesc: rgb(73, 73, 73);
 
+@mixin small {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+@mixin wide {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+@mixin long {
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
 @mixin textureBlock {
   opacity: 0.15;
   background-image: url('../img/texture/fake_brick.png');
@@ -24,13 +37,18 @@ $colorCategoryDesc: rgb(73, 73, 73);
 @mixin beauty {
   background: rgb(255,103,148);
   background: linear-gradient(145deg, rgba(255,103,148,1) 0%, rgba(255,185,195,1) 100%);
+  @include small();
   img{
     position: absolute;
     bottom: -40px;
     height: 150px;
-    @media (min-width: 450px) and (max-width: 650px){
-      bottom: -60px;
-      height: 170px;
+    @media (min-width: 450px) and (max-width: 750px){
+      bottom: -100px;
+      height: 250px;
+    }
+    @media (min-width: 750px){
+      bottom: -70px;
+      height: 275px
     }
   }
 }
@@ -38,25 +56,38 @@ $colorCategoryDesc: rgb(73, 73, 73);
 @mixin eat {
   background: rgb(243,80,0);
   background: linear-gradient(175deg, rgba(243,80,0,1) 0%, rgba(255,132,41,1) 100%);
+  @include long();
   img{
     position: absolute;
     bottom: 20px;
     height: 230px;
-    @media (min-width: 450px) and (max-width: 650px){
-      height: 250px;
+    @media (min-width: 450px) and (max-width: 750px){
+      height: 350px;
     }
+    @media (min-width: 750px){
+      height: 370px;
+      bottom: -50px;
+    }
+  }
+  @media (min-width: 750px){
+    @include wide();
   }
 }
 
 @mixin auto {
   background: rgb(255,203,51);
   background: linear-gradient(150deg, rgba(255,203,51,1) 0%, rgba(255,239,110,1) 100%);
+  @include small();
   img{
     position: absolute;
     bottom: -10px;
     height: 150px;
-    @media (min-width: 450px) and (max-width: 650px){
-
+    @media (min-width: 450px) and (max-width: 750px){
+      height: 200px;
+    }
+    @media (min-width: 750px){
+      bottom: -20px;
+      height: 250px;
     }
   }
 }
@@ -64,42 +95,60 @@ $colorCategoryDesc: rgb(73, 73, 73);
 @mixin home {
   background: rgb(0,180,90);
   background: linear-gradient(120deg, rgba(0,180,90,1) 0%, rgba(88,209,150,1) 100%);
+  @include wide();
   img{
     position: absolute;
     bottom: 0px;
     right: 0px;
     height: 150px;
-    @media (min-width: 450px) and (max-width: 650px){
-
+    @media (min-width: 450px) and (max-width: 750px){
+      bottom: -10px;
+      right: 25px;
+      height: 300px;
     }
+    @media (min-width: 750px){
+      right: 50px;
+      height: 300px;
+    }
+  }
+  @media (min-width: 750px){
+    
   }
 }
 
 @mixin cloth {
   background: rgb(214,112,225);
   background: linear-gradient(175deg, rgba(214,112,225,1) 0%, rgba(224,151,233,1) 100%);
+  @include small();
   img{
     position: absolute;
     top: 35px;
     height: 150px;
-    @media (min-width: 450px) and (max-width: 650px){
+    @media (min-width: 450px) and (max-width: 750px){
       top: 25px;
-      height: 175px;
+      height: 250px;
     }
+    @media (min-width: 750px){
+      bottom: 0;
+      top: auto;
+      height: 350px;
+    }
+  }
+  @media (min-width: 750px){
+    @include long();
   }
 }
 
 @mixin motion {
   background: rgb(72,209,204);
   background: linear-gradient(120deg, rgba(72,209,204,1) 0%, rgba(64,224,208,1) 100%);
+  @include small();
   img{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 150px;
-    @media (min-width: 450px) and (max-width: 650px){
+    bottom: 0px;
+    width: 100%;
+    @media (min-width: 450px) and (max-width: 750px){
       bottom: -20px;
-      height: 225px;
     }
   }
 }
@@ -107,11 +156,16 @@ $colorCategoryDesc: rgb(73, 73, 73);
 @mixin holidays {
   background: rgb(249,36,5);
   background: linear-gradient(120deg, rgba(249,36,5,1) 0%, rgba(250,60,32,1) 100%);
+  @include long();
   img{
     position: absolute;
     bottom: 0px;
     height: 310px;
-    @media (min-width: 450px) and (max-width: 650px){
+    @media (min-width: 450px) and (max-width: 750px){
+      height: 410px;
+    }
+    @media (min-width: 750px){
+      height: 510px;
     }
   }
 }
@@ -119,25 +173,38 @@ $colorCategoryDesc: rgb(73, 73, 73);
 @mixin training {
   background: rgb(65,105,225);
   background: linear-gradient(180deg, rgba(65,105,225,1) 0%, rgba(100,149,237,1) 100%);
+  @include long();
   img{
     position: absolute;
     bottom: 20px;
     height: 175px;
-    @media (min-width: 450px) and (max-width: 650px){
-      height: 225px;
+    @media (min-width: 450px) and (max-width: 750px){
+      height: 275px;
     }
+  }
+  @media (min-width: 750px){
+    @include small();
   }
 }
 
 html{
   font-size: 12px;
   background-color: black;
+  @media (min-width: 751px){
+    font-size: 14px;
+  }
 }
 body{
   width: 100%;
 }
 a{
   text-decoration: none;
+}
+main{
+  @media (min-width: 751px){
+    max-width: 1024px;
+    margin: 0px auto;
+  }
 }
 .closed{
   opacity: 0.5;
@@ -163,10 +230,16 @@ a{
             padding-left: 10px;
             padding-right: 10px;
             z-index: 50;
+            @media (min-width: 751px){
+              padding-left: 20px;
+            }
         }
         p:nth-child(1){
           @include textHeader();
           padding-top: 10px;
+          @media (min-width: 751px){
+            padding-top: 15px;
+          }
         }
         p:nth-child(2){
           @include textSubtitle();
@@ -184,14 +257,6 @@ a{
           z-index: 20;
           @include textureBlock();
         }
-    }
-    .long{
-      grid-row: span 2;
-      grid-column: span 1;
-    }
-    .wide{
-      grid-row: span 1;
-      grid-column: span 2;
     }
     &__beauty{
       @include beauty();
@@ -226,6 +291,15 @@ a{
   column-gap: 10px;
   width: calc(100% - 20px);
   margin-bottom: 60px;
+  @media (min-width: 450px) and (max-width: 750px){
+    grid-template-rows: repeat(6, 200px);
+  }
+  @media (min-width: 751px){
+    margin: 10px auto;
+    margin-bottom: 60px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 250px);
+  }
 }
 .categoriesService{
   display: grid;
@@ -241,6 +315,9 @@ a{
   overflow: hidden;
   height: 100px;
   margin: 10px;
+  @media (min-width: 751px){
+    height: 125px;
+  }
   h2{
     @include textHeader();
     color:$colorCategoryHeader;
@@ -271,6 +348,11 @@ a{
   width: 50px;
   background-repeat: no-repeat;
   background-position: center;
+  @media (min-width: 751px){
+    bottom: 40px;
+    height: 80px;
+    width: 80px;
+  }
 }
 .categoryHome{
   background-image: url('../img/main/category/house.svg');
@@ -295,4 +377,31 @@ a{
 }
 .categoryHolidays{
   background-image: url('../img/main/category/holidays.svg');
+}
+
+// Lazy
+.swiper-lazy-preloader {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  z-index: 100;
+  background-color: rgba(0,217,255,0.5);
+  animation: sk-rotating-plane 1.2s infinite ease-in-out;
+}
+
+@keyframes sk-rotating-plane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

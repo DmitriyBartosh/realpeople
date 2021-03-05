@@ -1,6 +1,6 @@
 // import Swiper JS
 import Swiper from 'swiper';
-import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+import SwiperCore, { Navigation, Pagination, Lazy } from 'swiper/core';
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -50,13 +50,18 @@ let closeStory = document.querySelectorAll(".closeButton");
 let swipersliderStory = [];
 
 if(sliderStory){
-  SwiperCore.use([Navigation, Pagination]);
+  SwiperCore.use([Navigation, Pagination, Lazy]);
   for(let i = 0; i < sliderStory.length; i++) {
     sliderStory[i].id = 'storyContent_' + [i];
     storyBlock[i].id = 'story_' + [i];
 
     var swiperContainer = document.querySelector('#storyContent_' + [i]);
     swipersliderStory[i] = new Swiper(swiperContainer, {
+      preloadImages: false,
+      init: false,
+      lazy: {
+        loadPrevNext: true,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -76,11 +81,15 @@ if(sliderStory){
 
     masterAvatar[i].addEventListener('click', function(e){
       e.preventDefault();
+      swipersliderStory[i].init();
       storyBlock[i].anim.play();
 
       var video = storyBlock[i].querySelector('video');
 
       if(video){
+        var iconClose = new Image();
+        iconClose.src = '../img/icon/volume_off.svg';
+        
         if(swipersliderStory[i].activeIndex == 0){
           video.play();
         }

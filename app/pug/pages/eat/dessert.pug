@@ -7,6 +7,8 @@ html(lang="ru")
         link(rel="stylesheet", href="../css/style.min.css")
         link(rel="shortcut icon", href="../img/logo/icon32.png", type="image/x-icon")
         link(rel="shortcut icon", href="../img/logo/icon256.png")
+
+        link(rel="preload", as="image", href="../webp/eat/freelance/dessert/background.webp")
     body
       main
         include ../../layout/eat/story/dessert.pug
@@ -28,25 +30,20 @@ html(lang="ru")
                   img(src="../img/eat/freelance/dessert/avatar/1.JPG", alt="")
               .master__info
                 h3 Наталья
-                p Мкрн. Северный
+                p Торты и панкейки
               .master__link
                 a.master__link__openNavButton
                   img(src="../img/icon/add.svg", alt="")
 
             .master__nav
-              a(href="#").master__nav__button.long.price
-                img(src="../img/icon/ruble.svg", alt="")
+              a(href="#").master__nav__button.small.price
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/lomanevaa/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a.master__nav__button.small.noBack
               a(href="https://wa.me/+79333374422").master__nav__button.wide
                 img(src="../img/icon/whatsapp.svg", alt="")
                 p Написать
-              a.master__nav__button.small.noBack
-              a.master__nav__button.small.noBack
 
 
           .master
@@ -65,29 +62,24 @@ html(lang="ru")
                   img(src="../img/icon/add.svg", alt="")
 
             .master__nav
-              a(href="#").master__nav__button.long.price
-                img(src="../img/icon/ruble.svg", alt="")
+              a(href="#").master__nav__button.small.price
                 p Цены
-              a.master__nav__button.small.noBack
               a(href="https://www.instagram.com/nail_by_frolovaa/" target="_blank").master__nav__button.wide
                 img(src="../img/icon/instagram.svg", alt="")
                 p Instagram
-              a.master__nav__button.small.noBack
-              a.master__nav__button.small.noBack
-              a.master__nav__button.small.noBack
               a(href="https://wa.me/+79135230660").master__nav__button.wide
                 img(src="../img/icon/whatsapp.svg", alt="")
                 p Написать
 
-      nav.serviceNav
-        .serviceNav__back
-          a(href="/realpeople/app/eat.html")
-            img(src="../img/icon/backspace.svg", alt="")
-        .serviceNav__category 
-          a(href="/realpeople/app/eat.html") 
-            p Категория | Еда
-        .serviceNav__home
-          a(href="/realpeople/app/")
-            p REAL
+        nav.serviceNav
+          .serviceNav__back
+            a(href="/realpeople/app/eat.html")
+              img(src="../img/icon/backspace.svg", alt="")
+          .serviceNav__category 
+            a(href="/realpeople/app/eat.html") 
+              p Категория | Еда
+          .serviceNav__home
+            a(href="/realpeople/app/")
+              p REAL
       
       script(src="../js/bundle.js")
