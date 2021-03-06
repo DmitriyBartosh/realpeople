@@ -16,6 +16,11 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+// Запретить Scale
+document.addEventListener('touchmove', function (event) {
+  if (event.scale !== 1) { event.preventDefault(); }
+}, false);
+
 // Анимация для списка ссылок и галереи (Freelance)
 let openButton = document.querySelectorAll(".master__link__openNavButton");
 let linksMaster = document.querySelectorAll(".master__nav");
