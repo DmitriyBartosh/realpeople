@@ -88,7 +88,7 @@ if(sliderStory){
 
       if(video){
         var iconClose = new Image();
-        iconClose.src = '../img/icon/volume_off.svg';
+        iconClose.src = '../img/icon/volume_up.svg';
         
         if(swipersliderStory[i].activeIndex == 0){
           video.play();
@@ -128,16 +128,16 @@ if(sliderStory){
     sound[i].addEventListener('click', function(e){
       e.preventDefault();
 
-      if(this.classList.contains('off')){
+      if(this.classList.contains('on')){
         for(let i = 0; i < sound.length; i++){
-          sound[i].classList.toggle('off');
-          allVideo[i].muted = false;
+          sound[i].classList.toggle('on');
+          allVideo[i].muted = true;
         }
       }
       else{
         for(let i = 0; i < sound.length; i++){
-          sound[i].classList.toggle('off');
-          allVideo[i].muted = true;
+          sound[i].classList.toggle('on');
+          allVideo[i].muted = false;
         }
       }
       
