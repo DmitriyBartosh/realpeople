@@ -17,8 +17,11 @@ window.addEventListener('resize', () => {
 });
 
 // Запретить Scale
-document.addEventListener('touchmove', function (event) {
-  if (event.scale !== 1) { event.preventDefault(); }
+document.addEventListener('touchmove', function(event) {
+  event = event.originalEvent || event;
+  if(event.scale > 1) {
+    event.preventDefault();
+  }
 }, false);
 
 // Анимация для списка ссылок и галереи (Freelance)
